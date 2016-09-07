@@ -1,0 +1,153 @@
+.art-about {
+  position: relative;
+  color: #a3a3a3;
+  font-family: Helvetica Neue, Helvetica, Arial, serif;
+  font-size: 1.5em;
+  width: 40vw;
+  height: 40vh;
+  left: 30vw;
+  top: 20vh; }
+
+.art-footer {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  flex: 1; }
+
+section#art-gallery {
+  display: flex;
+  background-color: #000000;
+  padding: 20px;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 81vh;
+  overflow-y: scroll; }
+  section#art-gallery h1 {
+    color: white;
+    text-align: center; }
+  section#art-gallery .art-gallery-thumb {
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-color: #0D3349;
+    margin: 0.5em;
+    position: relative;
+    overflow: hidden; }
+    section#art-gallery .art-gallery-thumb.hidden {
+      display: none; }
+    section#art-gallery .art-gallery-thumb:hover {
+      cursor: pointer;
+      opacity: 0.8; }
+      section#art-gallery .art-gallery-thumb:hover .captionCnt {
+        bottom: 0; }
+    section#art-gallery .art-gallery-thumb:before {
+      content: "";
+      display: block;
+      padding-top: 100%; }
+    section#art-gallery .art-gallery-thumb .captionCnt {
+      height: 7em;
+      background-color: black;
+      opacity: 0.5;
+      position: absolute;
+      bottom: -8em;
+      left: 0;
+      right: 0;
+      transition: 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: left;
+      padding: 1em; }
+      section#art-gallery .art-gallery-thumb .captionCnt span {
+        color: white;
+        font-family: Helvetica Neue, Helvetica, Arial, serif;
+        font-size: 1em; }
+        section#art-gallery .art-gallery-thumb .captionCnt span.description {
+          font-size: 2em;
+          line-height: 2em; }
+        section#art-gallery .art-gallery-thumb .captionCnt span.tags {
+          display: flex; }
+          section#art-gallery .art-gallery-thumb .captionCnt span.tags .tag {
+            display: block;
+            height: 1em;
+            min-width: 4em;
+            border-radius: 0.2em;
+            border: 1px solid #cccccc;
+            background-color: #444444;
+            margin-right: 1em;
+            text-decoration: none;
+            color: white;
+            text-align: center; }
+
+.art-header {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/logo.jpg") left no-repeat red;
+  background-size: contain; }
+  .art-header .nav {
+    color: white;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center; }
+    .art-header .nav .breadcrumb,
+    .art-header .nav #about {
+      display: block;
+      min-width: 4em;
+      height: 2em;
+      margin: 0 0.5em;
+      color: inherit;
+      text-decoration: inherit;
+      vertical-align: middle;
+      line-height: 2em; }
+      .art-header .nav .breadcrumb:hover,
+      .art-header .nav #about:hover {
+        background-color: #3d3a3a; }
+
+/*@import 'header';
+@import 'gallery';
+@import 'footer';*/
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden;
+  font-family: Arial, serif;
+  font-size: 13px; }
+
+.art-main-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  height: 100%; }
+
+.browserhappy {
+  color: red;
+  font-size: 2em;
+  text-align: center;
+  top: 40vh;
+  left: 0;
+  right: 0;
+  position: absolute; }
+
+.art-modal-popup {
+  position: fixed;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  bottom: -200vh; }
+  .art-modal-popup.active {
+    display: block;
+    opacity: 1;
+    bottom: 0;
+    transition: 0.5s ease-in-out; }
+

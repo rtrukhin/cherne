@@ -1,0 +1,74 @@
+{
+  "images": [
+    {
+      "name": "1z12.jpg",
+      "caption": "Ритуал",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I"]
+    },
+    {
+      "name": "ikar.jpg",
+      "caption": "Ной",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I"]
+    },
+    {
+      "name": "koropy.jpg",
+      "caption": "Мавки",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I"]
+    },
+    {
+      "name": "kosar.jpg",
+      "caption": "Маски",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I"]
+    },
+    {
+      "name": "mamaj.jpg",
+      "caption": "Ритуал",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I", "II"]
+    },
+    {
+      "name": "mamaj2.jpg",
+      "caption": "Ной",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I", "II"]
+    },
+    {
+      "name": "masky.jpg",
+      "caption": "Мавки",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I", "II"]
+    },
+    {
+      "name": "mawky.jpg",
+      "caption": "Маски1",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I", "II"]
+    },
+    {
+      "name": "noj.jpg",
+      "caption": "Маски2",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I", "II"]
+    },
+    {
+      "name": "rytual-600x652.jpg",
+      "caption": "Маски3",
+      "size": "100x200",
+      "material": "Левкас",
+      "tags": ["I", "II"]
+    }
+  ]
+}
