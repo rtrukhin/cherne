@@ -15,6 +15,10 @@
             var me = window.gallery;
             me.updateGallery(data);
             me.updateHeader(data);
+            me.showSplashScreen();
+        },
+        showSplashScreen: function showSplashScreen() {
+            this.showPopup('Андрій Чернець', '0.jpg');
         },
         createStructure: function createStructure() {
             this.createHeader();
@@ -48,38 +52,35 @@
         updateHeader: function updateHeader(data) {
             var me = this,
                 header = $('header'),
-                images = data.images,
-                tags = [],
+                nav = $('<div class="nav"></div>'),
                 tag;
 
-            function prepareTags(arr) {
-                var tagsString = tags.join();
-                for (var i = 0; i < arr.length; i++) {
-                    if (tagsString.indexOf(arr[i]) === -1) {
-                        tags.push(arr[i]);
+            function prepareTags(images) {
+                var tags = [];
+
+                for (var i = 0; i < images.length; i++) {
+                    for (var j = 0; j < images[i].tags.length; j++) {
+                        tag = images[i].tags[j];
+                        if (!tags.includes(tag)) {
+                            tags.push(tag);
+                            nav.append('<a href="#" class="breadcrumb" data-tag="' + tag + '">' + tag + '</a>');
+                        }
                     }
                 }
             }
 
-            for (var i = 0; i < images.length; i++) {
-                prepareTags(images[i].tags);
-            }
+            prepareTags(data.images);
 
-            var nav = $('<div class="nav"></div>');
-
-            for (var j = 0; j < tags.length; j++) {
-                nav.append('<a href="#" class="breadcrumb" data-tag="' + tags[j] + '">' + tags[j] + '</a>');
-            }
             nav.append('<a href="#" id="about">Про мене</a>');
             header.append(nav);
 
             $('.breadcrumb').on('click', this.onTagClickHandler.bind(this));
+
             $('#about').on('click', function () {
-                me.showAboutPage(true);
+                me.showPopup('about.html');
             });
-
-
         },
+
         updateGallery: function updateGallery(data) {
             var images = data.images,
                 galleryEl = $('#art-gallery'),
@@ -120,12 +121,23 @@
         },
 
         onThumbClickHandler: function onThumbClickHandler(e) {
-            this.showPopup(e.target);
+            this.showPopup(null, e.target.id);
         },
-        showPopup: function showPopup(target) {
-            var popup = $('.art-modal-popup');
-            popup.html('');
-            popup.attr('style', 'background-image: url(images/' + target.id + ')');
+        showPopup: function showPopup(content, background) {
+            var popup = $('.art-modal-popup'),
+                loadEl = $('<div>');
+
+            background = background ? 'url(images/' + background + ')' : 'none';
+
+            loadEl.load(content, function (text, type, data) {
+                if (data.status === 200) {
+                    popup.html(text);
+                } else if (data.status > 200) {
+                    popup.html('<div class="art-modal-text">' + content + '</div>');
+                }
+            });
+
+            popup.css('background-image', background);
             popup.toggleClass('active');
             popup.on('click', function () {
                 popup.toggleClass('active');
@@ -148,17 +160,6 @@
                     $(img).removeClass('hidden');
                 }
             }
-        },
-
-        showAboutPage: function showAboutPage() {
-            var popup = $('.art-modal-popup');
-            popup.attr('style', 'background-image: none');
-            popup.load('about.html');
-            popup.toggleClass('active');
-            popup.on('click', function () {
-                popup.toggleClass('active');
-                popup.off();
-            });
         },
 
         loadConfig: function loadConfig(callback) {

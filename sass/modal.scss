@@ -15,4 +15,16 @@
     transition: 0.5s ease-in-out;
   }
 
+  .art-modal-text {
+    width: 100vw;
+    font-size: 10vw;
+    text-align: center;
+    line-height: 100vh;
+    display: inline-block;
+    background: url(../images/0.jpg) no-repeat  20px 20px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+
 }
