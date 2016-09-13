@@ -1,74 +1,73 @@
 {
-  "images": [
-    {
+  "images": 
+    [{
       "name": "1z12.jpg",
       "caption": "Ритуал",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I"]
+      "category": "Пейзаж"
     },
     {
       "name": "ikar.jpg",
       "caption": "Ной",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I"]
+      "category": "Ікона"
     },
     {
       "name": "koropy.jpg",
       "caption": "Мавки",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I"]
+      "category": "Пейзаж"
     },
     {
       "name": "kosar.jpg",
       "caption": "Маски",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I"]
+      "category": "Ікона"
     },
     {
       "name": "mamaj.jpg",
       "caption": "Ритуал",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I", "II"]
+      "category": "Ікона"
     },
     {
       "name": "mamaj2.jpg",
       "caption": "Ной",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I", "II"]
+      "category": "Абстракція"
     },
     {
       "name": "masky.jpg",
       "caption": "Мавки",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I", "II"]
+      "category": "Ілюстрація"
     },
     {
       "name": "mawky.jpg",
       "caption": "Маски1",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I", "II"]
+      "category": "Ілюстрація"
     },
     {
       "name": "noj.jpg",
       "caption": "Маски2",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I", "II"]
+      "category": "Малярство"
     },
     {
       "name": "rytual-600x652.jpg",
       "caption": "Маски3",
       "size": "100x200",
       "material": "Левкас",
-      "tags": ["I", "II"]
-    }
-  ]
+      "category": "Малярство"
+    }]
 }
