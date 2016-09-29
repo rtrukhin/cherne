@@ -36,12 +36,12 @@
         bottom: 0;
       }
     }
-
+/*
     &:before {
       content: "";
       display: block;
       padding-top: 100%;
-    }
+    }*/
 
     .captionCnt {
       height: 7em;
@@ -63,7 +63,7 @@
         font-family: Helvetica Neue, Helvetica, Arial, serif;
         font-size: 1em;
 
-        &.description {
+        &.caption {
           font-size: 2em;
           line-height: 2em;
         }

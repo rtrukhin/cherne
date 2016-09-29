@@ -2,9 +2,10 @@
  * Created by rtrukh on 26.05.2016.
  */
 ({
-    mainContainer: $('#art-main-container'),
     config: null,
     categories: [],
+    imagesData: [],
+    imagesEl: [],
     init: function init() {
         this.browseHappy();
     },
@@ -33,7 +34,7 @@
         var body = $('body');
 
         body.append(this.createStructureEl('header', 'art-header'));
-        body.append(this.createStructureEl('section', 'art-gallery'));
+        body.append(this.createStructureEl('article', 'art-gallery'));
         body.append(this.createStructureEl('footer', 'art-footer'));
         body.append(this.createStructureEl('div', 'art-modal-popup'));
     },
@@ -47,46 +48,48 @@
     },
     updateHeader: function updateHeader(data) {
         var header = $('header'),
-            nav = $('<div class="nav"></div>');
+            nav = this.createStructureEl('nav', 'nav');
 
         this.categories = [].concat(data.images.map(function (img) {
             return img.category;
         }));
 
+        nav.append('<ul>');
+
         this.categories.forEach(function (elem, index, array) {
-            if (index == array.indexOf(elem)) {
-                nav.append('<a href="#" class="breadcrumb" data-tag="' + elem + '">' + elem + '</a>');
+            if (index === array.indexOf(elem)) {
+                nav.append('<li><a href="#" class="breadcrumb" data-tag="' + elem + '">' + elem + '</a></li>');
             }
         });
 
-        nav.append('<a href="#" id="about">Про мене</a>');
+        nav.append('<li><a href="#" id="about">Про мене</a></li>');
+        nav.append('</ul>');
         header.append(nav);
 
-        $('.breadcrumb').on('click', this.onTagClickHandler.bind(this));
+        $('.breadcrumb').on('click', this.onNavClickHandler.bind(this));
 
         $('#about').on('click', function () {
             this.showPopup('about.html');
         }.bind(this));
     },
 
+    createGalleryCategory: function createGalleryCategory() {
+
+
+    },
+
     updateGallery: function updateGallery(data) {
-        var images = data.images,
-            galleryEl = $('.art-gallery'),
+        var galleryEl = $('.art-gallery'),
             imgEl,
             captionCnt;
+        
+        this.imagesData = data.images;
 
-        for (var i = 0; i < images.length; i++) {
-            imgEl = $('<div id="' + images[i].name + '" class="art-gallery-thumb" data-tag="' + images[i].category + '"></div>');
-            captionCnt = $('<div class="captionCnt"></div>');
-            captionCnt.append('<span class="description">' + images[i].caption + '</span>');
-            captionCnt.append('<span class="size">' + images[i].size + '</span>');
-            captionCnt.append('<span class="material">' + images[i].material + '</span>');
-            captionCnt.append('<span class="tags">' + images[i].category + '</span>');
-            imgEl.append(captionCnt);
-            imgEl.on('click', this.onThumbClickHandler.bind(this));
-            imgEl.attr('style', 'background-image: url(images/' + images[i].name + ')');
-            galleryEl.append(imgEl);
-        }
+        this.imagesData.map(function (img, index) {
+            galleryEl.append(this.createImageEl(img));
+        }.bind(this));
+
+        this.imagesEl = $('.art-gallery-thumb');
 
         $('.captionCnt').on('click', function (e) {
             e.preventDefault();
@@ -96,12 +99,13 @@
             return false;
         });
 
-        $('.tag').on('custom', this.onTagClickHandler.bind(this));
+        $('.tag').on('custom', this.onNavClickHandler.bind(this));
     },
 
     onThumbClickHandler: function onThumbClickHandler(e) {
         this.showPopup(null, e.target.id);
     },
+
     showPopup: function showPopup(content, background) {
         var popup = $('.art-modal-popup'),
             loadEl = $('<div>');
@@ -124,21 +128,39 @@
         });
     },
 
-    onTagClickHandler: function onTagClickHandler(e) {
-        this.filterImagesByTag(e.currentTarget.dataset.tag);
+    createImageEl: function createImageEl(img) {
+        return $("<figure data-tag='" + img.category + "' class='art-gallery-thumb'>" +
+            "<img src='images/" + img.name + "'>" +
+            "<figcaption>" +
+            "<span class='caption'>" + img.caption + "</span>" +
+            "<span class='size'>" + img.size + "</span>" +
+            "<span class='material'>" + img.material + "</span>" +
+            "</figure>");
     },
 
-    filterImagesByTag: function filterImagesByTag(tag) {
-        var images = $('.art-gallery-thumb');
+    onNavClickHandler: function onNavClickHandler(e) {
+        var images = this.filterImagesByCategory(this.imagesEl, e.currentTarget.dataset.tag);
+        this.showImages(images);
+    },
 
-        for (var i = 0; i < images.length; i++) {
-            var img = images[i];
-            if (img.dataset.tag.indexOf(tag) === -1) {
-                $(img).addClass('hidden');
-            } else {
-                $(img).removeClass('hidden');
-            }
-        }
+    hideAllImagesEl: function () {
+      this.imagesEl.map(function (index, img) {
+        $(img).removeClass('hidden');
+        $(img).addClass('hidden');
+      });
+    },
+
+    showImages: function showImages(images) {
+        this.hideAllImagesEl();
+        images.map(function (index, img) {
+            $(img).removeClass('hidden');
+        });
+    },
+
+    filterImagesByCategory: function filterImagesByCategory(images, tag) {
+        return images.filter(function(index, img) {
+           return img.dataset.tag.indexOf(tag) > -1;
+        });
     },
 
     loadConfig: function loadConfig(callback) {
