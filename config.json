@@ -1,6 +1,6 @@
 {
-  "images": 
-    [{
+  "images": [
+    {
       "name": "1z12.jpg",
       "caption": "Ритуал",
       "size": "100x200",
@@ -69,5 +69,6 @@
       "size": "100x200",
       "material": "Левкас",
       "category": "Малярство"
-    }]
+    }
+  ]
 }

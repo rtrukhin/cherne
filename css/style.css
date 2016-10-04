@@ -95,7 +95,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    align-items: center; }
+    align-items: center;
+    list-style: none; }
     .art-header .nav .breadcrumb,
     .art-header .nav #about {
       display: block;

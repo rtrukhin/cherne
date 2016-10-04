@@ -21,6 +21,7 @@
         }
     },
     onConfigLoaded: function onConfigLoaded(data) {
+        this.prepareData(data);
         this.createStructure();
         this.updateGallery(data);
         this.updateHeader(data);
@@ -46,24 +47,31 @@
     updateFooter: function updateFooter() {
         $('footer').html(new Date().getFullYear() + '&nbsp;&copy;&nbsp;' + 'Андрій Чернець');
     },
-    updateHeader: function updateHeader(data) {
-        var header = $('header'),
-            nav = this.createStructureEl('nav', 'nav');
-
-        this.categories = [].concat(data.images.map(function (img) {
-            return img.category;
-        }));
-
-        nav.append('<ul>');
-
-        this.categories.forEach(function (elem, index, array) {
-            if (index === array.indexOf(elem)) {
-                nav.append('<li><a href="#" class="breadcrumb" data-tag="' + elem + '">' + elem + '</a></li>');
+    prepareData: function (data) {
+        this.categories = this.populateImageCategories(data.images);
+        this.imagesData = data.images;
+    },
+    populateImageCategories: function (images) {
+        var res = [];
+        for (var i = 0; i < images.length; i++) {
+            var cat = images[i].category;
+            if (!res.includes(cat)) {
+                res.push(cat);
             }
+        }
+        return res;
+    },
+    updateHeader: function updateHeader() {
+        var header = $('header'),
+            nav = this.createStructureEl('nav', 'nav'),
+            ul = this.createStructureEl('ul');
+
+        this.categories.forEach(function (elem) {
+            ul.append('<li><a href="#" class="breadcrumb" data-tag="' + elem + '">' + elem + '</a></li>');
         });
 
-        nav.append('<li><a href="#" id="about">Про мене</a></li>');
-        nav.append('</ul>');
+        ul.append('<li><a href="#" id="about">Про мене</a></li>');
+        nav.append(ul);
         header.append(nav);
 
         $('.breadcrumb').on('click', this.onNavClickHandler.bind(this));
@@ -78,12 +86,10 @@
 
     },
 
-    updateGallery: function updateGallery(data) {
+    updateGallery: function updateGallery() {
         var galleryEl = $('.art-gallery'),
             imgEl,
             captionCnt;
-        
-        this.imagesData = data.images;
 
         this.imagesData.map(function (img, index) {
             galleryEl.append(this.createImageEl(img));
@@ -144,10 +150,10 @@
     },
 
     hideAllImagesEl: function () {
-      this.imagesEl.map(function (index, img) {
-        $(img).removeClass('hidden');
-        $(img).addClass('hidden');
-      });
+        this.imagesEl.map(function (index, img) {
+            $(img).removeClass('hidden');
+            $(img).addClass('hidden');
+        });
     },
 
     showImages: function showImages(images) {
@@ -158,8 +164,8 @@
     },
 
     filterImagesByCategory: function filterImagesByCategory(images, tag) {
-        return images.filter(function(index, img) {
-           return img.dataset.tag.indexOf(tag) > -1;
+        return images.filter(function (index, img) {
+            return img.dataset.tag.indexOf(tag) > -1;
         });
     },
 
