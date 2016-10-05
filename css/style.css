@@ -27,6 +27,29 @@
   .art-gallery h1 {
     color: white;
     text-align: center; }
+  .art-gallery .art-gallery-category {
+    position: relative;
+    width: 40vw;
+    height: 40vw;
+    overflow: hidden;
+    display: flex; }
+    .art-gallery .art-gallery-category img {
+      transition: all 2s; }
+    .art-gallery .art-gallery-category:hover img:nth-child(2n+0) {
+      margin-left: -50vw; }
+    .art-gallery .art-gallery-category figcaption {
+      color: white;
+      position: absolute;
+      width: 100%;
+      font-size: 5vw;
+      opacity: 0.8;
+      line-height: 60vw;
+      cursor: pointer; }
+      .art-gallery .art-gallery-category figcaption:hover {
+        opacity: 0.5;
+        text-shadow: 1px 1px 5px white; }
+  .art-gallery .hidden {
+    display: none; }
   .art-gallery .art-gallery-thumb {
     width: 400px;
     height: 400px;
@@ -34,15 +57,7 @@
     background-color: #0D3349;
     margin: 0.5em;
     position: relative;
-    overflow: hidden;
-    /*
-    &:before {
-      content: "";
-      display: block;
-      padding-top: 100%;
-    }*/ }
-    .art-gallery .art-gallery-thumb.hidden {
-      display: none; }
+    overflow: hidden; }
     .art-gallery .art-gallery-thumb:hover {
       cursor: pointer;
       opacity: 0.8; }
@@ -91,12 +106,15 @@
   background-size: contain; }
   .art-header .nav {
     color: white;
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-    list-style: none; }
+    font-size: 2vw; }
+    .art-header .nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      align-items: center;
+      list-style: none; }
+    .art-header .nav li {
+      display: inline-flex; }
     .art-header .nav .breadcrumb,
     .art-header .nav #about {
       display: block;

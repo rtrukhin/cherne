@@ -14,12 +14,19 @@
 
   .nav {
     color: $txt-white;
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-    list-style: none;
+    font-size: 2vw;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      align-items: center;
+      list-style: none;
+    }
+
+    li {
+      display: inline-flex;
+    }
 
     .breadcrumb,
     #about {

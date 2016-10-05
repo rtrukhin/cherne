@@ -15,6 +15,43 @@
     text-align: center;
   }
 
+  .art-gallery-category {
+    position: relative;
+    width: 40vw;
+    height: 40vw;
+    overflow: hidden;
+    display: flex;
+    
+    img {
+      transition: all 2s;
+    }
+
+    &:hover {
+      img:nth-child(2n+0) {
+        margin-left: -50vw;
+      }
+    }
+
+    figcaption {
+      color: white;
+      position: absolute;
+      width: 100%;
+      font-size: 5vw;
+      opacity: 0.8;
+      line-height: 60vw;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+        text-shadow: 1px 1px 5px white;
+      }
+    }
+  }
+
+  .hidden {
+      display: none;
+    }
+
   .art-gallery-thumb {
     width: 400px;
     height: 400px;
@@ -24,10 +61,6 @@
     position: relative;
     overflow: hidden;
 
-    &.hidden {
-      display: none;
-    }
-
     &:hover {
       cursor: pointer;
       opacity: 0.8;
@@ -36,12 +69,6 @@
         bottom: 0;
       }
     }
-/*
-    &:before {
-      content: "";
-      display: block;
-      padding-top: 100%;
-    }*/
 
     .captionCnt {
       height: 7em;
