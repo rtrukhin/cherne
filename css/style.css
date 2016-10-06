@@ -99,34 +99,30 @@
             text-align: center; }
 
 .art-header {
-  padding: 20px;
-  text-align: center;
   flex: 1;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/logo.jpg") left no-repeat red;
-  background-size: contain; }
+  height: 15vh;
+  text-align: center;
+  background-color: darkred; }
+  .art-header .art-logo {
+    height: 15vh; }
   .art-header .nav {
     color: white;
     font-size: 2vw; }
     .art-header .nav ul {
       display: flex;
-      justify-content: center;
       flex-wrap: nowrap;
       align-items: center;
-      list-style: none; }
-    .art-header .nav li {
-      display: inline-flex; }
-    .art-header .nav .breadcrumb,
-    .art-header .nav #about {
-      display: block;
-      min-width: 4em;
-      height: 2em;
-      margin: 0 0.5em;
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    .art-header .nav .breadcrumb {
+      display: inline-flex;
+      /*height: 5vw;
+            line-height: 5vw;*/
+      padding: 0.1vw 4vw;
       color: inherit;
-      text-decoration: inherit;
-      vertical-align: middle;
-      line-height: 2em; }
-      .art-header .nav .breadcrumb:hover,
-      .art-header .nav #about:hover {
+      text-decoration: inherit; }
+      .art-header .nav .breadcrumb:hover {
         background-color: #3d3a3a; }
 
 /*@import 'header';

@@ -1,47 +1,35 @@
 @import 'static';
-
+$header-height: 15vh;
+$header-text-size: 2vw;
 .art-header {
-  padding: 20px;
-  text-align: center;
-  flex: 1;
-  background:
-          linear-gradient(
-                  rgba(0, 0, 0, 0.45),
-                  rgba(0, 0, 0, 0.45)
-  ),
-  url("../images/logo.jpg") left no-repeat red;
-  background-size: contain;
-
-  .nav {
-    color: $txt-white;
-    font-size: 2vw;
-
-    ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-      align-items: center;
-      list-style: none;
+    flex: 1;
+    height: $header-height;
+    text-align: center;
+    background-color: darkred;
+    .art-logo {
+        height: $header-height;
     }
-
-    li {
-      display: inline-flex;
+    .nav {
+        color: $txt-white;
+        font-size: $header-text-size;
+        ul {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .breadcrumb {
+            display: inline-flex;
+            /*height: 5vw;
+            line-height: 5vw;*/
+            padding: 0.1vw 4vw;
+            color: inherit;
+            text-decoration: inherit;
+            &:hover {
+                background-color: $nav-item-bkg-hover;
+            }
+        }
     }
-
-    .breadcrumb,
-    #about {
-      display: block;
-      min-width: 4em;
-      height: 2em;
-      margin: 0 0.5em;
-      color: inherit;
-      text-decoration: inherit;
-      vertical-align: middle;
-      line-height: 2em;
-
-      &:hover {
-        background-color: $nav-item-bkg-hover;
-      }
-    }
-  }
 }

@@ -1,74 +1,74 @@
 {
   "images": [
     {
-      "name": "1z12.jpg",
+      "name": "stub.png",
       "caption": "Ритуал",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Пейзаж"
+      "category": "Lorem"
     },
     {
-      "name": "ikar.jpg",
+      "name": "stub.png",
       "caption": "Ной",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Ікона"
+      "category": "Ipsum"
     },
     {
-      "name": "koropy.jpg",
+      "name": "stub.png",
       "caption": "Мавки",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Пейзаж"
+      "category": "Dolor"
     },
     {
-      "name": "kosar.jpg",
+      "name": "stub.png",
       "caption": "Маски",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Абстракція"
+      "category": "Amet"
     },
     {
-      "name": "mamaj.jpg",
+      "name": "stub.png",
       "caption": "Ритуал",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Ікона"
+      "category": "Sit"
     },
     {
-      "name": "mamaj2.jpg",
+      "name": "stub.png",
       "caption": "Ной",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Абстракція"
+      "category": "Sit"
     },
     {
-      "name": "masky.jpg",
+      "name": "stub.png",
       "caption": "Мавки",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Ілюстрація"
+      "category": "Amet"
     },
     {
-      "name": "mawky.jpg",
+      "name": "stub.png",
       "caption": "Маски1",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Ілюстрація"
+      "category": "Lorem"
     },
     {
-      "name": "noj.jpg",
+      "name": "stub.png",
       "caption": "Маски2",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Малярство"
+      "category": "Dolor"
     },
     {
-      "name": "rytual-600x652.jpg",
+      "name": "stub.png",
       "caption": "Маски3",
       "size": "100x200",
       "material": "Левкас",
-      "category": "Малярство"
+      "category": "Dolor"
     }
   ]
 }
