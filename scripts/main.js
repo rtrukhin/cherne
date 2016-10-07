@@ -24,8 +24,8 @@ var cherneArt = (function() {
         onConfigLoaded: function onConfigLoaded(data) {
             this.prepareData(data);
             this.createStructure();
-            this.updateGallery(data);
-            this.updateHeader(data);
+            this.updateGallery();
+            this.updateHeader();
             this.updateFooter();
             this.showSplashScreen();
         },
@@ -67,7 +67,7 @@ var cherneArt = (function() {
                 nav = this.createStructureEl('nav', 'nav'),
                 ul = this.createStructureEl('ul');
 
-            ul.append('<img class="art-logo" src="images/logo.jpg">');
+            ul.append('<img id="art-logo" src="images/logo.jpg">');
             this.categories.forEach(function(elem) {
                 ul.append('<li><a href="#" class="breadcrumb" data-tag="' + elem + '">' + elem + '</a></li>');
             });
@@ -77,6 +77,7 @@ var cherneArt = (function() {
             header.append(nav);
 
             $('.breadcrumb').on('click', this.onNavClickHandler.bind(this));
+            $('#art-logo').on('click', this.resetGallery.bind(this));
 
             $('#about').on('click', function() {
                 this.showPopup('about.html');
@@ -111,6 +112,11 @@ var cherneArt = (function() {
             galleryEl.append(galleryImages);
         },
 
+        resetGallery: function resetGallery() {
+            this.show($('.art-gallery-showcase'));
+            this.hideAllImagesEl();
+        },
+
         updateGallery: function updateGallery() {
             var galleryEl = $('.art-gallery'),
                 galleryShowcase = this.createStructureEl('section', 'art-gallery-showcase');
@@ -121,7 +127,7 @@ var cherneArt = (function() {
                 var me = this;
                 var catEl = this.createGalleryCategoryEl(value);
                 catEl[0].addEventListener('click', function(event) {
-                    galleryShowcase.addClass('hidden');
+                    this.hide($('.art-gallery-showcase'));
                     var images = this.filterImagesByCategory(this.imagesEl, value);
                     this.showImages(images);
                 }.bind(me));
@@ -133,6 +139,14 @@ var cherneArt = (function() {
 
         onThumbClickHandler: function onThumbClickHandler(e) {
             this.showPopup(null, e.target.id);
+        },
+
+        hide: function hide(el) {
+            $(el).addClass('hidden');
+        },
+
+        show: function show(el) {
+            $(el).removeClass('hidden');
         },
 
         showPopup: function showPopup(content, background) {
@@ -170,20 +184,23 @@ var cherneArt = (function() {
         onNavClickHandler: function onNavClickHandler(e) {
             var images = this.filterImagesByCategory(this.imagesEl, e.currentTarget.dataset.tag);
             this.showImages(images);
+            this.hide($('.art-gallery-showcase'));
         },
 
         hideAllImagesEl: function() {
-            this.imagesEl.map(function(img) {
-                $(img).removeClass('hidden');
-                $(img).addClass('hidden');
-            });
+            var me = this;
+            me.imagesEl.map(function(img) {
+                this.show(img);
+                this.hide(img);
+            }, me);
         },
 
         showImages: function showImages(images) {
-            this.hideAllImagesEl();
+            var me = this;
+            me.hideAllImagesEl();
             images.map(function(img) {
-                $(img).removeClass('hidden');
-            });
+                this.show(img);
+            }, me);
         },
 
         filterImagesByCategory: function filterImagesByCategory(images, tag) {

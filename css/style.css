@@ -16,6 +16,11 @@
   flex: 1; }
 
 .art-gallery {
+  background-color: #000000; }
+  .art-gallery .hidden {
+    display: none; }
+
+.art-gallery-showcase {
   display: flex;
   background-color: #000000;
   padding: 20px;
@@ -24,20 +29,18 @@
   justify-content: center;
   height: 81vh;
   overflow-y: scroll; }
-  .art-gallery h1 {
+  .art-gallery-showcase h1 {
     color: white;
     text-align: center; }
-  .art-gallery .art-gallery-category {
+  .art-gallery-showcase .art-gallery-category {
     position: relative;
-    width: 40vw;
-    height: 40vw;
+    width: 10vw;
+    height: 10vw;
     overflow: hidden;
     display: flex; }
-    .art-gallery .art-gallery-category img {
+    .art-gallery-showcase .art-gallery-category img {
       transition: all 2s; }
-    .art-gallery .art-gallery-category:hover img:nth-child(2n+0) {
-      margin-left: -50vw; }
-    .art-gallery .art-gallery-category figcaption {
+    .art-gallery-showcase .art-gallery-category figcaption {
       color: white;
       position: absolute;
       width: 100%;
@@ -45,12 +48,13 @@
       opacity: 0.8;
       line-height: 60vw;
       cursor: pointer; }
-      .art-gallery .art-gallery-category figcaption:hover {
+      .art-gallery-showcase .art-gallery-category figcaption:hover {
         opacity: 0.5;
         text-shadow: 1px 1px 5px white; }
-  .art-gallery .hidden {
-    display: none; }
-  .art-gallery .art-gallery-thumb {
+
+.art-gallery-images {
+  display: flex; }
+  .art-gallery-images .art-gallery-thumb {
     width: 400px;
     height: 400px;
     background-repeat: no-repeat;
@@ -58,12 +62,12 @@
     margin: 0.5em;
     position: relative;
     overflow: hidden; }
-    .art-gallery .art-gallery-thumb:hover {
+    .art-gallery-images .art-gallery-thumb:hover {
       cursor: pointer;
       opacity: 0.8; }
-      .art-gallery .art-gallery-thumb:hover .captionCnt {
+      .art-gallery-images .art-gallery-thumb:hover .captionCnt {
         bottom: 0; }
-    .art-gallery .art-gallery-thumb .captionCnt {
+    .art-gallery-images .art-gallery-thumb .captionCnt {
       height: 7em;
       background-color: black;
       opacity: 0.5;
@@ -77,16 +81,16 @@
       justify-content: flex-end;
       text-align: left;
       padding: 1em; }
-      .art-gallery .art-gallery-thumb .captionCnt span {
+      .art-gallery-images .art-gallery-thumb .captionCnt span {
         color: white;
         font-family: Helvetica Neue, Helvetica, Arial, serif;
         font-size: 1em; }
-        .art-gallery .art-gallery-thumb .captionCnt span.caption {
+        .art-gallery-images .art-gallery-thumb .captionCnt span.caption {
           font-size: 2em;
           line-height: 2em; }
-        .art-gallery .art-gallery-thumb .captionCnt span.tags {
+        .art-gallery-images .art-gallery-thumb .captionCnt span.tags {
           display: flex; }
-          .art-gallery .art-gallery-thumb .captionCnt span.tags .tag {
+          .art-gallery-images .art-gallery-thumb .captionCnt span.tags .tag {
             display: block;
             height: 1em;
             min-width: 4em;
@@ -100,11 +104,12 @@
 
 .art-header {
   flex: 1;
-  height: 15vh;
+  height: 5vw;
   text-align: center;
   background-color: darkred; }
-  .art-header .art-logo {
-    height: 15vh; }
+  .art-header #art-logo {
+    height: 5vw;
+    cursor: pointer; }
   .art-header .nav {
     color: white;
     font-size: 2vw; }
@@ -117,9 +122,7 @@
       margin: 0; }
     .art-header .nav .breadcrumb {
       display: inline-flex;
-      /*height: 5vw;
-            line-height: 5vw;*/
-      padding: 0.1vw 4vw;
+      padding: 0.5vw 4vw;
       color: inherit;
       text-decoration: inherit; }
       .art-header .nav .breadcrumb:hover {

@@ -1,13 +1,14 @@
 @import 'static';
-$header-height: 15vh;
+$header-height: 5vw;
 $header-text-size: 2vw;
 .art-header {
     flex: 1;
     height: $header-height;
     text-align: center;
     background-color: darkred;
-    .art-logo {
+    #art-logo {
         height: $header-height;
+        cursor: pointer;
     }
     .nav {
         color: $txt-white;
@@ -22,9 +23,7 @@ $header-text-size: 2vw;
         }
         .breadcrumb {
             display: inline-flex;
-            /*height: 5vw;
-            line-height: 5vw;*/
-            padding: 0.1vw 4vw;
+            padding: 0.5vw 4vw;
             color: inherit;
             text-decoration: inherit;
             &:hover {
