@@ -1,6 +1,8 @@
 @import 'static';
 .art-gallery {
     background-color: $gallery-bkg;
+    height: 100vh;
+    overflow-y: auto;
     .hidden {
         display: none;
     }
@@ -13,34 +15,32 @@
     text-align: center;
     flex-wrap: wrap;
     justify-content: center;
-    height: 81vh;
-    overflow-y: scroll;
     h1 {
         color: $category-caption-txt;
         text-align: center;
     }
     .art-gallery-category {
         position: relative;
+        top: calc((100vh - 10vw)/2.5);
+        min-width: 100px;
+        min-height: 100px;
         width: 10vw;
         height: 10vw;
+        background-color: darkgrey;
         overflow: hidden;
-        display: flex;
+        margin: 2vw;
+        cursor: pointer;
         img {
+            width: 10vw;
             transition: all 2s;
-        }
-        &:hover {
-            img:nth-child(2n+0) {
-                // margin-left: -50vw;
-            }
         }
         figcaption {
             color: white;
             position: absolute;
             width: 100%;
-            font-size: 5vw;
+            font-size: 2vw;
             opacity: 0.8;
-            line-height: 60vw;
-            cursor: pointer;
+            bottom: 1vw;
             &:hover {
                 opacity: 0.5;
                 text-shadow: 1px 1px 5px white;
@@ -52,11 +52,10 @@
 .art-gallery-images {
     display: flex;
     .art-gallery-thumb {
-        width: 400px;
-        height: 400px;
-        background-repeat: no-repeat;
+        width: 30vw;
+        height: 30vw;
         background-color: #0D3349;
-        margin: 0.5em;
+        margin: 0;
         position: relative;
         overflow: hidden;
         &:hover {

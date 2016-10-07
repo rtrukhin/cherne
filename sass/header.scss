@@ -1,8 +1,5 @@
 @import 'static';
-$header-height: 5vw;
-$header-text-size: 2vw;
 .art-header {
-    flex: 1;
     height: $header-height;
     text-align: center;
     background-color: darkred;
