@@ -1,33 +1,31 @@
 @import 'static';
-/*@import 'header';
-@import 'gallery';
-@import 'footer';*/
-
-html, body {
-  padding: 0;
-  margin: 0;
-  height: 100% !important;
-  width: 100% !important;
-  overflow: hidden;
-  font-family: Arial, serif;
-  font-size: 13px;
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100% !important;
+    width: 100% !important;
+    font-family: Arial, serif;
+    font-size: 13px;
+    min-width: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: $gallery-bkg-color;
 }
 
 .art-main-container {
-  color: $txt-white;
-  display: flex;
-  flex-direction: column;
-  align-content: stretch;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    height: 100%;
 }
 
-
 .browserhappy {
-  color: red;
-  font-size: 2em;
-  text-align: center;
-  top:40vh;
-  left: 0;
-  right: 0;
-  position: absolute;
+    color: red;
+    font-size: 2em;
+    text-align: center;
+    top: 40vh;
+    left: 0;
+    right: 0;
+    position: absolute;
 }

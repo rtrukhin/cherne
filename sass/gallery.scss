@@ -1,7 +1,6 @@
 @import 'static';
 .art-gallery {
-    background-color: $gallery-bkg;
-    height: 100vh;
+    height: 90vh;
     overflow-y: auto;
     .hidden {
         display: none;
@@ -10,10 +9,9 @@
 
 .art-gallery-showcase {
     display: flex;
-    background-color: $gallery-bkg;
     padding: 20px;
     text-align: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     h1 {
         color: $category-caption-txt;
@@ -21,11 +19,16 @@
     }
     .art-gallery-category {
         position: relative;
-        top: calc((100vh - 10vw)/2.5);
-        min-width: 100px;
-        min-height: 100px;
-        width: 10vw;
-        height: 10vw;
+        @media (min-width: $media-desktop-min-width) {
+            width: 30vw;
+            height: 30vw;
+            min-width: 10em;
+            min-height: 10em;
+        }
+        @media (max-width: $media-phone-max-width) {
+            width: 15em;
+            height: 15em;
+        }
         background-color: darkgrey;
         overflow: hidden;
         margin: 2vw;
@@ -52,8 +55,8 @@
 .art-gallery-images {
     display: flex;
     .art-gallery-thumb {
-        width: 30vw;
-        height: 30vw;
+        width: 40vw;
+        height: 40vw;
         background-color: #0D3349;
         margin: 0;
         position: relative;

@@ -1,19 +1,35 @@
 @import 'static';
 .art-header {
-    height: $header-height;
-    text-align: center;
-    background-color: darkred;
-    #art-logo {
-        height: $header-height;
-        cursor: pointer;
+    @media (min-width: $media-desktop-min-width) {
+        min-height: $header-height;
+        font-size: $header-text-size;
+    }
+    @media (max-width: $media-phone-max-width) {
+        min-height: $header-height-phone;
+        font-size: $header-text-size-phone;
+    }
+    background-color: $header-bkg-color;
+    figure.logo {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(90deg, black, #413f3f, #413f3f, black);
+        #art-logo {
+            @media (min-width: $media-desktop-min-width) {
+                max-height: $header-height;
+            }
+            @media (max-width: $media-phone-max-width) {
+                max-height: $header-height-phone;
+            }
+            margin-left: 48vw;
+            display: block;
+            cursor: pointer;
+        }
     }
     .nav {
-        color: $txt-white;
-        font-size: $header-text-size;
         ul {
             display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -21,10 +37,11 @@
         .breadcrumb {
             display: inline-flex;
             padding: 0.5vw 4vw;
-            color: inherit;
+            color: $header-nav-txt-color;
             text-decoration: inherit;
             &:hover {
-                background-color: $nav-item-bkg-hover;
+                background-color: $header-nav-bkg-hover-color;
+                color: $header-nav-txt-color-hover;
             }
         }
     }

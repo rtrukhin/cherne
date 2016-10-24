@@ -1,3 +1,9 @@
+/*
+@media (min-width: $media-desktop-min-width) {
+}
+@media (max-width: $media-phone-max-width) {
+}
+*/
 .art-about {
   position: relative;
   color: #a3a3a3;
@@ -8,45 +14,66 @@
   left: 30vw;
   top: 20vh; }
 
+/*
+@media (min-width: $media-desktop-min-width) {
+}
+@media (max-width: $media-phone-max-width) {
+}
+*/
 .art-footer {
-  background-color: darkblue;
-  color: white;
+  background-color: darkred;
+  color: black;
   text-align: center;
-  height: 5vw;
-  line-height: 5vw;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0; }
+  @media (min-width: 400px) {
+    .art-footer {
+      height: 2em;
+      line-height: 2em; } }
+  @media (max-width: 399px) {
+    .art-footer {
+      height: 2em;
+      line-height: 2em; } }
 
+/*
+@media (min-width: $media-desktop-min-width) {
+}
+@media (max-width: $media-phone-max-width) {
+}
+*/
 .art-gallery {
-  background-color: #000000;
-  height: 100vh;
+  height: 90vh;
   overflow-y: auto; }
   .art-gallery .hidden {
     display: none; }
 
 .art-gallery-showcase {
   display: flex;
-  background-color: #000000;
   padding: 20px;
   text-align: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center; }
   .art-gallery-showcase h1 {
     color: white;
     text-align: center; }
   .art-gallery-showcase .art-gallery-category {
     position: relative;
-    top: calc((100vh - 10vw)/2.5);
-    min-width: 100px;
-    min-height: 100px;
-    width: 10vw;
-    height: 10vw;
     background-color: darkgrey;
     overflow: hidden;
     margin: 2vw;
     cursor: pointer; }
+    @media (min-width: 400px) {
+      .art-gallery-showcase .art-gallery-category {
+        width: 30vw;
+        height: 30vw;
+        min-width: 10em;
+        min-height: 10em; } }
+    @media (max-width: 399px) {
+      .art-gallery-showcase .art-gallery-category {
+        width: 15em;
+        height: 15em; } }
     .art-gallery-showcase .art-gallery-category img {
       width: 10vw;
       transition: all 2s; }
@@ -64,8 +91,8 @@
 .art-gallery-images {
   display: flex; }
   .art-gallery-images .art-gallery-thumb {
-    width: 30vw;
-    height: 30vw;
+    width: 40vw;
+    height: 40vw;
     background-color: #0D3349;
     margin: 0;
     position: relative;
@@ -110,45 +137,72 @@
             color: white;
             text-align: center; }
 
+/*
+@media (min-width: $media-desktop-min-width) {
+}
+@media (max-width: $media-phone-max-width) {
+}
+*/
 .art-header {
-  height: 5vw;
-  text-align: center;
-  background-color: darkred; }
-  .art-header #art-logo {
-    height: 5vw;
-    cursor: pointer; }
-  .art-header .nav {
-    color: white;
-    font-size: 2vw; }
-    .art-header .nav ul {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      list-style: none;
-      padding: 0;
-      margin: 0; }
-    .art-header .nav .breadcrumb {
-      display: inline-flex;
-      padding: 0.5vw 4vw;
-      color: inherit;
-      text-decoration: inherit; }
-      .art-header .nav .breadcrumb:hover {
-        background-color: #3d3a3a; }
+  background-color: black; }
+  @media (min-width: 400px) {
+    .art-header {
+      min-height: 3em;
+      font-size: 1.5em; } }
+  @media (max-width: 399px) {
+    .art-header {
+      min-height: 2em;
+      font-size: 1em; } }
+  .art-header figure.logo {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(90deg, black, #413f3f, #413f3f, black); }
+    .art-header figure.logo #art-logo {
+      margin-left: 48vw;
+      display: block;
+      cursor: pointer; }
+      @media (min-width: 400px) {
+        .art-header figure.logo #art-logo {
+          max-height: 3em; } }
+      @media (max-width: 399px) {
+        .art-header figure.logo #art-logo {
+          max-height: 2em; } }
+  .art-header .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .art-header .nav .breadcrumb {
+    display: inline-flex;
+    padding: 0.5vw 4vw;
+    color: #413f3f;
+    text-decoration: inherit; }
+    .art-header .nav .breadcrumb:hover {
+      background-color: darkred;
+      color: black; }
 
-/*@import 'header';
-@import 'gallery';
-@import 'footer';*/
-html, body {
+/*
+@media (min-width: $media-desktop-min-width) {
+}
+@media (max-width: $media-phone-max-width) {
+}
+*/
+html,
+body {
   padding: 0;
   margin: 0;
   height: 100% !important;
   width: 100% !important;
-  overflow: hidden;
   font-family: Arial, serif;
-  font-size: 13px; }
+  font-size: 13px;
+  min-width: 300px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: black; }
 
 .art-main-container {
-  color: white;
   display: flex;
   flex-direction: column;
   align-content: stretch;
@@ -189,3 +243,9 @@ html, body {
     -webkit-text-fill-color: transparent;
     font-weight: bold; }
 
+/*
+@media (min-width: $media-desktop-min-width) {
+}
+@media (max-width: $media-phone-max-width) {
+}
+*/
