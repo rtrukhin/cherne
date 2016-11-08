@@ -20,6 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "jQuery": "^2.2.4"
+    "jQuery": "^2.2.4",
+    "requirejs": "^2.3.2"
   }
 }

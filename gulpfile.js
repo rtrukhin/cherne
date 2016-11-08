@@ -2,6 +2,34 @@
 
 var gulp = require('gulp');
 
+function startExpress() {
+    var express = require('express'),
+        app = express();
+
+    app.use(express.static(__dirname));
+    app.listen(9095);
+}
+
+gulp.task('serve', ['styles'], function () {
+    var livereload = require('gulp-livereload'),
+        open = require('gulp-open'),
+        options = {
+            uri: 'http://chernets-art.info:9095'
+        };
+
+    livereload.listen({
+        start: true,
+        port: 35728
+    });
+    gulp.watch('./sass/**/*.scss', ['styles']);
+    gulp.watch(['./styles/main.css', './scripts/*.js']).on('change', livereload.changed);
+
+    startExpress();
+
+    gulp.src('./index.html').pipe(open(options));
+
+});
+
 gulp.task('clean', function () {
     var del = require('del');
     del.sync([
@@ -9,29 +37,12 @@ gulp.task('clean', function () {
     ]);
 });
 
-gulp.task('style', function () {
+gulp.task('styles', function () {
     var sass = require('gulp-sass'),
-        del = require('del'),
-        sourcemaps = require('gulp-sourcemaps'),
         concat = require('gulp-concat');
-    
-    del.sync(['./css/style.css']);
+
     return gulp.src(['./sass/*.scss'])
         .pipe(sass())
-        .pipe(concat('style.css'))
-        .pipe(gulp.dest('./css/'));
-});
-
-gulp.task('script', function () {
-    var concat = require('gulp-concat');
-    return gulp.src([
-            './bower_components/jQuery/dist/jquery.js',
-            './scripts/main.js'
-        ])
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest('./scripts/'));
-});
-
-gulp.task('default', ['clean', 'style'], function () {
-
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest('./styles/'));
 });

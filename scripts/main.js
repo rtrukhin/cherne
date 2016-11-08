@@ -1,25 +1,20 @@
+'use strict';
+
 /**
  * Created by rtrukh on 26.05.2016.
  */
-var cherneArt = (function () {
-    return {
+
+requirejs([
+    "../bower_components/jQuery/dist/jquery.min",
+    "../scripts/utility"
+], function ($, Util) {
+    var cherneArt = {
         config: null,
         categories: [],
         imagesData: [],
         imagesEl: [],
         init: function init() {
-            this.browseHappy();
-        },
-        detectIE: function detectIE(ua) {
-            return /(msie|trident |rv:).?(10|11\.\d)/i.test(ua);
-        },
-        browseHappy: function browseHappy() {
-            if (this.detectIE(navigator.userAgent)) {
-                $('body').html('<p class="browserhappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your ' +
-                    'browser</a> to improve your experience.</p>');
-            } else {
-                this.loadConfig(this.onConfigLoaded.bind(this));
-            }
+            Util.browseHappy(this.loadConfig, this.onConfigLoaded);
         },
         onConfigLoaded: function onConfigLoaded(data) {
             this.prepareData(data);
@@ -217,6 +212,7 @@ var cherneArt = (function () {
             });
         }
     }
-})();
 
-cherneArt.init();
+    cherneArt.init();
+
+});

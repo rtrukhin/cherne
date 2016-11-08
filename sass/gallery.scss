@@ -20,14 +20,12 @@
     .art-gallery-category {
         position: relative;
         @media (min-width: $media-desktop-min-width) {
-            width: 30vw;
-            height: 30vw;
-            min-width: 10em;
-            min-height: 10em;
+            max-width: 30vw;
+            max-height: 30vw;
         }
         @media (max-width: $media-phone-max-width) {
-            width: 15em;
-            height: 15em;
+            max-width: 15em;
+            max-height: 15em;
         }
         background-color: darkgrey;
         overflow: hidden;
@@ -35,7 +33,7 @@
         cursor: pointer;
         img {
             width: 10vw;
-            transition: all 2s;
+            // transition: all 2s;
         }
         figcaption {
             color: white;

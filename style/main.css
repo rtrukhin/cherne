@@ -66,17 +66,14 @@
     cursor: pointer; }
     @media (min-width: 400px) {
       .art-gallery-showcase .art-gallery-category {
-        width: 30vw;
-        height: 30vw;
-        min-width: 10em;
-        min-height: 10em; } }
+        max-width: 30vw;
+        max-height: 30vw; } }
     @media (max-width: 399px) {
       .art-gallery-showcase .art-gallery-category {
-        width: 15em;
-        height: 15em; } }
+        max-width: 15em;
+        max-height: 15em; } }
     .art-gallery-showcase .art-gallery-category img {
-      width: 10vw;
-      transition: all 2s; }
+      width: 10vw; }
     .art-gallery-showcase .art-gallery-category figcaption {
       color: white;
       position: absolute;
