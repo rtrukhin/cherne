@@ -1,0 +1,65 @@
+'use strict';
+
+define({
+    "images": [{
+        "name": "stub.png",
+        "caption": "Ритуал",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Lorem"
+    }, {
+        "name": "stub.png",
+        "caption": "Ной",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Ipsum"
+    }, {
+        "name": "stub.png",
+        "caption": "Мавки",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Dolor"
+    }, {
+        "name": "stub.png",
+        "caption": "Маски",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Amet"
+    }, {
+        "name": "stub.png",
+        "caption": "Ритуал",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Sit"
+    }, {
+        "name": "stub.png",
+        "caption": "Ной",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Sit"
+    }, {
+        "name": "stub.png",
+        "caption": "Мавки",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Amet"
+    }, {
+        "name": "stub.png",
+        "caption": "Маски1",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Lorem"
+    }, {
+        "name": "stub.png",
+        "caption": "Маски2",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Dolor"
+    }, {
+        "name": "stub.png",
+        "caption": "Маски3",
+        "size": "100x200",
+        "material": "Левкас",
+        "category": "Dolor"
+    }]
+});

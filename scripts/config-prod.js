@@ -1,4 +1,4 @@
-{
+define({
     "images": [{
         "name": "zaklynacz dosczu.jpg",
         "caption": "Опис картини",
@@ -348,4 +348,4 @@
         "material": "Левкас",
         "category": "Ікона"
     }]
-}
+});

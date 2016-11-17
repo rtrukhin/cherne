@@ -5,93 +5,29 @@
  */
 
 requirejs([
-    "../bower_components/jQuery/dist/jquery.min",
-    "../scripts/utility"
-], function ($, Util) {
+    "../bower_components/jQuery/dist/jquery",
+    "../scripts/utility",
+    "../scripts/layout"
+], function (jquery, Util, Layout) {
     var cherneArt = {
-        config: null,
-        categories: [],
-        imagesData: [],
         imagesEl: [],
         init: function init() {
-            Util.browseHappy(this.loadConfig, this.onConfigLoaded);
+            if (!Util.browseHappy()) {
+                this.instantiate();
+            }
         },
-        onConfigLoaded: function onConfigLoaded(data) {
-            this.prepareData(data);
-            this.createStructure();
-            this.updateGallery();
+
+        instantiate: function instantiate() {
+            Layout.createLayout();
+
+            /*this.updateGallery();
             this.updateHeader();
             this.updateFooter();
-            this.showSplashScreen();
+
+            this.showSplashScreen();*/
         },
         showSplashScreen: function showSplashScreen() {
             this.showPopup('Андрій Чернець', '0.jpg');
-        },
-        createStructure: function createStructure() {
-            var body = $('body');
-
-            body.append(this.createStructureEl('header', 'art-header'));
-            body.append(this.createStructureEl('article', 'art-gallery'));
-            body.append(this.createStructureEl('footer', 'art-footer'));
-            body.append(this.createStructureEl('div', 'art-modal-popup'));
-        },
-        createStructureEl: function createStructureEl(elemName, className) {
-            var el = $(document.createElement(elemName));
-            el.addClass(className);
-            return el;
-        },
-        updateFooter: function updateFooter() {
-            $('footer').html(new Date().getFullYear() + '&nbsp;&copy;&nbsp;' + 'Андрій Чернець');
-        },
-        prepareData: function (data) {
-            this.categories = this.getImageCategories(data.images);
-            this.imagesData = data.images;
-        },
-        getImageCategories: function (images) {
-            var res = [];
-            for (var i = 0; i < images.length; i++) {
-                var cat = images[i].category;
-                if (!res.includes(cat)) {
-                    res.push(cat);
-                }
-            }
-            return res;
-        },
-        updateHeader: function updateHeader() {
-            var header = $('header'),
-                nav = this.createStructureEl('nav', 'nav'),
-                ul = this.createStructureEl('ul');
-
-            header.append('<figure class="logo"><img id="art-logo" src="images/logo.jpg"></figure>');
-            this.categories.forEach(function (elem) {
-                ul.append('<li><a href="#" class="breadcrumb" data-tag="' + elem + '">' + elem + '</a></li>');
-            });
-
-            ul.append('<li><a href="#" class="breadcrumb" id="about">Ciricullum Vitae</a></li>');
-            nav.append(ul);
-            header.append(nav);
-
-            $('.breadcrumb').on('click', this.onNavClickHandler.bind(this));
-            $('#art-logo').on('click', this.resetGallery.bind(this));
-
-            $('#about').on('click', function () {
-                this.showPopup('about.html');
-            }.bind(this));
-        },
-
-        createGalleryCategoryEl: function createGalleryCategory(category) {
-            var galleryEl = this.createStructureEl("figure", "art-gallery-category");
-
-            var catImages = this.imagesData.filter(function (value, index, arr) {
-                return value.category === category;
-            });
-
-            galleryEl.append('<figcaption>' + category + '</figcaption>');
-            catImages.forEach(function (value, index, arr) {
-                galleryEl.append('<img src="images/' + value.name + '" >');
-            });
-
-            return galleryEl;
         },
 
         addAllImagesAsHidden: function addAllImagesAsHidden() {
@@ -110,26 +46,6 @@ requirejs([
         resetGallery: function resetGallery() {
             this.show($('.art-gallery-showcase'));
             this.hideAllImagesEl();
-        },
-
-        updateGallery: function updateGallery() {
-            var galleryEl = $('.art-gallery'),
-                galleryShowcase = this.createStructureEl('section', 'art-gallery-showcase');
-
-            this.addAllImagesAsHidden();
-
-            this.categories.map(function (value, index, arr) {
-                var me = this;
-                var catEl = this.createGalleryCategoryEl(value);
-                catEl[0].addEventListener('click', function (event) {
-                    this.hide($('.art-gallery-showcase'));
-                    var images = this.filterImagesByCategory(this.imagesEl, value);
-                    this.showImages(images);
-                }.bind(me));
-                galleryShowcase.append(catEl);
-            }, this)
-
-            galleryEl.append(galleryShowcase);
         },
 
         onThumbClickHandler: function onThumbClickHandler(e) {
@@ -201,14 +117,6 @@ requirejs([
         filterImagesByCategory: function filterImagesByCategory(images, tag) {
             return images.filter(function (img) {
                 return img.dataset.tag.indexOf(tag) > -1;
-            });
-        },
-
-        loadConfig: function loadConfig(callback) {
-            $.getJSON('./config-prod.json').done(function (data) {
-                if (data) {
-                    callback(data);
-                }
             });
         }
     }
