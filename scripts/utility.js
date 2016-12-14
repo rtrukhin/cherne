@@ -1,6 +1,6 @@
 'use strict';
 
-define(function () {
+define(function() {
     return {
         detectIE: function detectIE(ua) {
             return /(msie|trident |rv:).?(10|11\.\d)/i.test(ua);
@@ -12,6 +12,16 @@ define(function () {
                 return true;
             }
             return false;
+        },
+        createEl: function createEl(elemName, attr, text) {
+            var el = $(document.createElement(elemName));
+
+            for (var key in attr) {
+                el.attr(key, attr[key]);
+            }
+
+            el.text(text || '');
+            return el;
         }
     }
 });

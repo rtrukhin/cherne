@@ -1,22 +1,13 @@
 'use strict';
 
 define([
+    "../scripts/utility",
     "../scripts/data"
-], function (Data) {
+], function(util, Data) {
     var Layout = function Layout() {
-        return (function () {
+        return (function() {
             return {
-                createEl: function createEl(elemName, attr, text) {
-                    var el = $(document.createElement(elemName));
-
-                    for (var key in attr) {
-                        el.attr(key, attr[key]);
-                    }
-
-                    el.text(text || '');
-                    return el;
-                },
-                createLayout: function createLayout() {
+                create: function create() {
                     this.createMainStructure();
                     this.createHeader();
                     this.updateFooter();
@@ -26,65 +17,66 @@ define([
                 createMainStructure: function createMainStructure() {
                     var body = $('body');
 
-                    body.append(this.createEl('header', {
+                    body.append(util.createEl('header', {
                         class: 'art-header'
                     }));
-                    body.append(this.createEl('article', {
+                    body.append(util.createEl('article', {
                         class: 'art-gallery'
                     }));
-                    body.append(this.createEl('footer', {
+                    body.append(util.createEl('footer', {
                         class: 'art-footer'
                     }));
-                    body.append(this.createEl('div', {
+                    body.append(util.createEl('div', {
                         class: 'art-modal-popup'
                     }));
                 },
 
                 createModalDialog: function createModalDialog() {
                     var dialogWrapper = $('.art-modal-popup'),
-                        title = this.createEl('div', {
+                        title = util.createEl('div', {
                             class: 'title-txt'
                         }, 'Title'),
-                        content = this.createEl('div', {
+                        content = util.createEl('div', {
                             class: 'content'
                         }),
-                        closeBtn = this.createEl('div', {
+                        closeBtn = util.createEl('div', {
                             class: 'close-btn'
                         }, 'X');
 
                     closeBtn.on('click', $.proxy(this.hideModalDialog, this));
                     dialogWrapper.append([title, closeBtn, content]);
+                    dialogWrapper.hide();
                 },
 
                 createHeader: function createHeader() {
                     var header = $('header'),
                         categories = Data.getImageCategories(),
-                        logoWrapper = this.createEl('figure', {
+                        logoWrapper = util.createEl('figure', {
                             class: 'logo'
                         }),
-                        logo = this.createEl('img', {
+                        logo = util.createEl('img', {
                             id: 'logo',
                             src: 'images/logo.jpg'
                         }),
-                        nav = this.createEl('nav'),
-                        breadcrumbWrapper = this.createEl('ul'),
-                        aboutLink = this.createEl('li', {
+                        nav = util.createEl('nav'),
+                        breadcrumbWrapper = util.createEl('ul'),
+                        aboutLink = util.createEl('li', {
                             id: 'about',
                             class: 'breadcrumb',
                         }, 'Ciricullum Vitae'),
-                        showcase = this.createEl('li', {
+                        showcase = util.createEl('li', {
                             id: 'showcase',
                             class: 'breadcrumb',
                         }, 'Open Showcase');
 
                     aboutLink.on('click', $.proxy(this.onBreadcrumbClickHandler, this));
-                    showcase.on('click', $.proxy(function () {
+                    showcase.on('click', $.proxy(function() {
                         $(this).trigger('openShowcase');
                     }, this));
 
                     header.append(logoWrapper.append(logo));
-                    categories.forEach(function (elem) {
-                        var breadcrumb = this.createEl('li', {
+                    categories.forEach(function(elem) {
+                        var breadcrumb = util.createEl('li', {
                             class: 'breadcrumb',
                             'data-category': elem
                         }, elem);
@@ -105,14 +97,14 @@ define([
                         res = [];
                     for (var i = 0; i < images.length; i++) {
                         img = images[i];
-                        imgWrapper = this.createEl('figure', {
+                        imgWrapper = util.createEl('figure', {
                             class: 'art-image-wrapper squared',
                             'data-category': img.category
                         });
-                        imgCaption = this.createEl('figcaption', {
+                        imgCaption = util.createEl('figcaption', {
                             class: 'art-image-caption'
                         }, img.caption);
-                        imgEl = this.createEl('img', {
+                        imgEl = util.createEl('img', {
                             class: 'art-image',
                             src: 'images/' + img.name
                         });
