@@ -1,9 +1,9 @@
 'use strict';
 
-define(["../scripts/config"], function (Config) {
+define(["../scripts/config-prod"], function(Config) {
     var Data;
 
-    (function (images) {
+    (function(images) {
         var setImageCategories = function setImageCategories(images) {
                 var res = [];
                 for (var i = 0; i < images.length; i++) {

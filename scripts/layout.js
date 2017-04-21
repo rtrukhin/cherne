@@ -44,7 +44,7 @@ define([
                         }, 'X');
 
                     closeBtn.on('click', $.proxy(this.hideModalDialog, this));
-                    dialogWrapper.append([title, closeBtn, content]);
+                    dialogWrapper.append([closeBtn, content]);
                     dialogWrapper.hide();
                 },
 
@@ -132,7 +132,13 @@ define([
 
                 onBreadcrumbClickHandler: function onBreadcrumbClickHandler(event) {
                     var category = $(event.target).data('category');
-                    this.filterImagesByCategory(category);
+
+                    if (category) {
+                        this.filterImagesByCategory(category);
+                    } else {
+                        $('.art-modal-popup > .content').load('about.html .art-about');
+                        this.showModalDialog();
+                    }
                 },
 
                 onImageClickHandler: function onImageClickHandler(event) {
@@ -152,20 +158,20 @@ define([
 
                 showModalDialog: function showModalDialog(dialogVO) {
                     var popup = $('.art-modal-popup');
-                    popup.attr('data-source', dialogVO.sourceEl.selector);
-                    popup.find('.content').append(dialogVO.content);
-                    popup.find('.title-txt').text(dialogVO.titleTxt);
+                    if (dialogVO) {
+                        popup.attr('data-source', dialogVO.sourceEl.selector);
+                        popup.find('.content').append(dialogVO.content);
+                        popup.find('.title-txt').text(dialogVO.titleTxt);
+                    }
+                    popup.show();
                 },
 
                 hideModalDialog: function hideModalDialog() {
-                    var popup = $('.art-modal-popup'),
-                        copyToEl = popup.data('source'),
-                        popupContent = popup.find('.content').children()[0],
-                        popupTitle = popup.find('.title-txt');
+                    var popup = $('.art-modal-popup');
 
-                    $(copyToEl).append(popupContent);
-                    popupTitle.text();
-                    this.showAllImages();
+                    popup.find('.title-txt').text('');
+                    popup.find('.content').text('');
+                    popup.hide();
                 },
 
                 filterImagesByCategory: function filterImagesByCategory(category) {

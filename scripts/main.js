@@ -20,10 +20,10 @@ requirejs([
             var layout = new Layout(),
                 showcase = new Showcase();
 
-            // $(layout).on(Layout.EVENTS.openShowcase, showcase.create);
+            $(layout).on(Layout.EVENTS.openShowcase, showcase.create);
 
             layout.create();
-            showcase.create();
+            // showcase.create();
 
             // layout.showAllImages();
         },

@@ -10,7 +10,7 @@ function startExpress() {
     app.listen(9095);
 }
 
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['styles'], function() {
     var livereload = require('gulp-livereload'),
         open = require('gulp-open'),
         options = {
@@ -30,14 +30,14 @@ gulp.task('serve', ['styles'], function () {
 
 });
 
-gulp.task('clean', function () {
+gulp.task('clean', function() {
     var del = require('del');
     del.sync([
         './dist'
     ]);
 });
 
-gulp.task('styles', function () {
+gulp.task('styles', function() {
     var sass = require('gulp-sass'),
         concat = require('gulp-concat');
 
