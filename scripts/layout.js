@@ -63,16 +63,9 @@ define([
                         aboutLink = util.createEl('li', {
                             id: 'about',
                             class: 'breadcrumb',
-                        }, 'Ciricullum Vitae'),
-                        showcase = util.createEl('li', {
-                            id: 'showcase',
-                            class: 'breadcrumb',
-                        }, 'Open Showcase');
+                        }, 'Ciricullum Vitae');
 
                     aboutLink.on('click', $.proxy(this.onBreadcrumbClickHandler, this));
-                    showcase.on('click', $.proxy(function() {
-                        $(this).trigger('openShowcase');
-                    }, this));
 
                     header.append(logoWrapper.append(logo));
                     categories.forEach(function(elem) {
@@ -84,7 +77,6 @@ define([
                         breadcrumbWrapper.append(breadcrumb);
                     }, this);
                     breadcrumbWrapper.append(aboutLink);
-                    breadcrumbWrapper.append(showcase);
                     header.append(breadcrumbWrapper);
                 },
 
@@ -136,9 +128,14 @@ define([
                     if (category) {
                         this.filterImagesByCategory(category);
                     } else {
-                        $('.art-modal-popup > .content').load('about.html .art-about');
-                        this.showModalDialog();
+                        this.showAboutMe();
                     }
+                },
+
+                showAboutMe: function showAboutMe() {
+                    $('.art-modal-popup > .content').load('about.html .art-about');
+                    $('.art-modal-popup > .title-txt').text('Про мене');
+                    this.showModalDialog();
                 },
 
                 onImageClickHandler: function onImageClickHandler(event) {
@@ -159,7 +156,6 @@ define([
                 showModalDialog: function showModalDialog(dialogVO) {
                     var popup = $('.art-modal-popup');
                     if (dialogVO) {
-                        popup.attr('data-source', dialogVO.sourceEl.selector);
                         popup.find('.content').append(dialogVO.content);
                         popup.find('.title-txt').text(dialogVO.titleTxt);
                     }

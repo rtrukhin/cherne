@@ -1,12 +1,12 @@
 define({
     "images": [{
-        "name": "zaklynacz dosczu.jpg",
+        "name": "zaklynacz_dosczu.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
         "category": "Малярство"
     }, {
-        "name": "zahubleni tini.jpg",
+        "name": "zahubleni_tini.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -24,13 +24,13 @@ define({
         "material": "Левкас",
         "category": "Малярство"
     }, {
-        "name": "vesilla v kani halylejskij.jpg",
+        "name": "vesilla_v_kani_halylejskij.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
         "category": "Малярство"
     }, {
-        "name": "velykyj rahivnyk.jpg",
+        "name": "velykyj_rahivnyk.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -54,7 +54,7 @@ define({
         "material": "Левкас",
         "category": "Абстракції"
     }, {
-        "name": "sad angelskyh pisen.jpg",
+        "name": "sad_angelskyh_pisen.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -78,7 +78,7 @@ define({
         "material": "Левкас",
         "category": "Пейзаж"
     }, {
-        "name": "ryba po....jpg",
+        "name": "ryba_po.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -108,13 +108,13 @@ define({
         "material": "Левкас",
         "category": "Пейзаж"
     }, {
-        "name": "provody stomlenoho soncja.jpg",
+        "name": "provody_stomlenoho_soncja.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
         "category": "Пейзаж"
     }, {
-        "name": "pokynute derevo.jpg",
+        "name": "pokynute_derevo.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -138,7 +138,7 @@ define({
         "material": "Левкас",
         "category": "Ілюстрація"
     }, {
-        "name": "oczikuvannja povnogo misjacja.jpg",
+        "name": "oczikuvannja_povnogo_misjacja.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -210,7 +210,7 @@ define({
         "material": "Левкас",
         "category": "Ікона"
     }, {
-        "name": "kulbabyni dity.jpg",
+        "name": "kulbabyni_dity.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",
@@ -330,7 +330,7 @@ define({
         "material": "Левкас",
         "category": "Ікона"
     }, {
-        "name": "andriy pervozvannyy.jpg",
+        "name": "andriy_pervozvannyy.jpg",
         "caption": "Опис картини",
         "size": "200x200",
         "material": "Левкас",

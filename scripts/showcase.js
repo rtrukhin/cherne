@@ -8,7 +8,7 @@ define([
     var Showcase = function Showcase() {
         return {
             create: function create() {
-                var images,
+                var imagesByCategory = [],
                     categories = data.getImageCategories();
 
                 $('.art-gallery').after(util.createEl('article', {
@@ -16,12 +16,20 @@ define([
                 }));
 
                 for (var i = 0; i < categories.length; i++) {
-                    var cat = categories[i];
-                    images = $('.art-image-wrapper[data-category=' + cat + ']');
+                    var cat = categories[i],
+                        images = $('.art-image-wrapper[data-category=' + cat + ']'),
+                        rndImg = images[Math.floor(Math.random() * images.length)],
+                        rndImgName = $(rndImg).find('img').attr('src').split('/')[1].split('.')[0],
+                        showcaseEl = this.createShowcaseEl(rndImgName, cat);
 
+                    showcaseEl.on('click', function() {
+                        $(Showcase).trigger(Showcase.EVENTS.showCategory);
+                    });
+
+                    $('.art-showcase').append(showcaseEl);
                 }
             },
-            createShowcaseEl: function createShowcaseEl(name) {
+            createShowcaseEl: function createShowcaseEl(name, cat) {
                 var wrapper = util.createEl('figure', {
                         class: 'showcase-img'
                     }),
@@ -30,7 +38,7 @@ define([
                     }),
                     caption = util.createEl('figcaption', {
                         class: 'showcase-caption'
-                    }, name);
+                    }, cat);
 
                 wrapper.append(img);
                 wrapper.append(caption);
@@ -39,6 +47,10 @@ define([
             }
         }
     }
+
+    Showcase.EVENTS = {
+        showCategory: 'showCategory'
+    };
 
     return Showcase;
 });
