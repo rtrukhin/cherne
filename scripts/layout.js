@@ -20,6 +20,9 @@ define([
                     body.append(util.createEl('header', {
                         class: 'art-header'
                     }));
+                    body.append(util.createEl('div', {
+                        class: 'art-splashscreen'
+                    }, "Андрій Чернець"));
                     body.append(util.createEl('article', {
                         class: 'art-gallery'
                     }));
@@ -50,7 +53,7 @@ define([
 
                 createHeader: function createHeader() {
                     var header = $('header'),
-                        categories = Data.getImageCategories(),
+                        headerItems = ['Галерея', 'Про себе', 'Контакти'],
                         logoWrapper = util.createEl('figure', {
                             class: 'logo'
                         }),
@@ -60,23 +63,33 @@ define([
                         }),
                         nav = util.createEl('nav'),
                         breadcrumbWrapper = util.createEl('ul'),
-                        aboutLink = util.createEl('li', {
-                            id: 'about',
+                        galleryLink = util.createEl('li', {
+                            id: 'header_gallery',
                             class: 'breadcrumb',
-                        }, 'Ciricullum Vitae');
+                        }, 'Галерея'),
+                        aboutLink = util.createEl('li', {
+                            id: 'header_about',
+                            class: 'breadcrumb',
+                        }, 'Про себе'),
+                        contactsLink = util.createEl('li', {
+                            id: 'header_contacts',
+                            class: 'breadcrumb',
+                        }, 'Контакти');
 
-                    aboutLink.on('click', $.proxy(this.onBreadcrumbClickHandler, this));
+                    breadcrumbWrapper.on('click', $.proxy(function() {
+                        $('.art-splashscreen').hide();
+                    }, this));
+
+                    galleryLink.on('click', $.proxy(function() {
+                        $(Layout).trigger(Layout.EVENTS.openShowcase);
+                        this.hideAllImages();
+                    }, this));
+                    aboutLink.on('click', $.proxy(this.showAboutMe, this));
+                    contactsLink.on('click', $.proxy(this.showContacts, this));
 
                     header.append(logoWrapper.append(logo));
-                    categories.forEach(function(elem) {
-                        var breadcrumb = util.createEl('li', {
-                            class: 'breadcrumb',
-                            'data-category': elem
-                        }, elem);
-                        breadcrumb.on('click', $.proxy(this.onBreadcrumbClickHandler, this));
-                        breadcrumbWrapper.append(breadcrumb);
-                    }, this);
-                    breadcrumbWrapper.append(aboutLink);
+
+                    breadcrumbWrapper.append([galleryLink, aboutLink, contactsLink]);
                     header.append(breadcrumbWrapper);
                 },
 
@@ -122,19 +135,15 @@ define([
                     this.hideAllImages();
                 },
 
-                onBreadcrumbClickHandler: function onBreadcrumbClickHandler(event) {
-                    var category = $(event.target).data('category');
-
-                    if (category) {
-                        this.filterImagesByCategory(category);
-                    } else {
-                        this.showAboutMe();
-                    }
-                },
-
                 showAboutMe: function showAboutMe() {
                     $('.art-modal-popup > .content').load('about.html .art-about');
                     $('.art-modal-popup > .title-txt').text('Про мене');
+                    this.showModalDialog();
+                },
+
+                showContacts: function showContacts() {
+                    $('.art-modal-popup > .content').load('contacts.html .art-contacts');
+                    $('.art-modal-popup > .title-txt').text('Контакти');
                     this.showModalDialog();
                 },
 

@@ -20,19 +20,18 @@ requirejs([
             var layout = new Layout(),
                 showcase = new Showcase();
 
-            $(Showcase).on(Showcase.EVENTS.showCategory, function() {
-                console.log('sfsdf');
-            });
-
             layout.create();
             showcase.create();
 
-            // layout.showAllImages();
-        },
-
-        showSplashScreen: function showSplashScreen() {
-            this.showPopup('Андрій Чернець', '0.jpg');
+            $(Showcase).on(Showcase.EVENTS.showCategory, function() {
+                var category = arguments[1];
+                layout.filterImagesByCategory(category);
+            });
+            $(Layout).on(Layout.EVENTS.openShowcase, function() {
+                showcase.show();
+            });
         }
+
     }
 
     cherneArt.init();

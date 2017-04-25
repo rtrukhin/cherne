@@ -3,7 +3,7 @@
 define(["../scripts/config-prod"], function(Config) {
     var Data;
 
-    (function(images) {
+    (function(cfg) {
         var setImageCategories = function setImageCategories(images) {
                 var res = [];
                 for (var i = 0; i < images.length; i++) {
@@ -14,8 +14,7 @@ define(["../scripts/config-prod"], function(Config) {
                 }
                 return res;
             },
-            categories = setImageCategories(images),
-            images = images,
+            categories = setImageCategories(cfg.images),
             instance;
 
         Data = function Data() {
@@ -28,10 +27,10 @@ define(["../scripts/config-prod"], function(Config) {
                 return categories;
             };
             this.getImages = function getImages() {
-                return images;
+                return cfg.images;
             };
         }
-    })(Config.images);
+    })(Config);
 
     return new Data();
 });

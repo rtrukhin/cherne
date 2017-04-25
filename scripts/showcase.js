@@ -22,16 +22,20 @@ define([
                         rndImgName = $(rndImg).find('img').attr('src').split('/')[1].split('.')[0],
                         showcaseEl = this.createShowcaseEl(rndImgName, cat);
 
-                    showcaseEl.on('click', function() {
-                        $(Showcase).trigger(Showcase.EVENTS.showCategory);
-                    });
+                    showcaseEl.on('click', $.proxy(function(event) {
+                        var cat = $(event.currentTarget).data('category');
+                        $(Showcase).trigger(Showcase.EVENTS.showCategory, cat);
+                        this.hide();
+                    }, this));
 
                     $('.art-showcase').append(showcaseEl);
+                    this.hide();
                 }
             },
             createShowcaseEl: function createShowcaseEl(name, cat) {
                 var wrapper = util.createEl('figure', {
-                        class: 'showcase-img'
+                        class: 'showcase-img',
+                        'data-category': cat
                     }),
                     img = util.createEl('img', {
                         src: 'images/' + name + '.jpg'
@@ -44,6 +48,12 @@ define([
                 wrapper.append(caption);
 
                 return wrapper;
+            },
+            hide: function hide() {
+                $('.art-showcase').hide();
+            },
+            show: function show() {
+                $('.art-showcase').show();
             }
         }
     }
