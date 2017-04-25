@@ -21,8 +21,9 @@ define([
                         class: 'art-header'
                     }));
                     body.append(util.createEl('div', {
-                        class: 'art-splashscreen'
-                    }, "Андрій Чернець"));
+                        class: 'art-splashscreen',
+                        'data-l10n-id': "splash-achernets"
+                    }));
                     body.append(util.createEl('article', {
                         class: 'art-gallery'
                     }));
@@ -53,7 +54,6 @@ define([
 
                 createHeader: function createHeader() {
                     var header = $('header'),
-                        headerItems = ['Галерея', 'Про себе', 'Контакти'],
                         logoWrapper = util.createEl('figure', {
                             class: 'logo'
                         }),
@@ -64,17 +64,25 @@ define([
                         nav = util.createEl('nav'),
                         breadcrumbWrapper = util.createEl('ul'),
                         galleryLink = util.createEl('li', {
-                            id: 'header_gallery',
+                            'data-l10n-id': "header-gallery",
                             class: 'breadcrumb',
-                        }, 'Галерея'),
+                        }),
                         aboutLink = util.createEl('li', {
-                            id: 'header_about',
+                            'data-l10n-id': "header-about",
                             class: 'breadcrumb',
-                        }, 'Про себе'),
+                        }),
                         contactsLink = util.createEl('li', {
-                            id: 'header_contacts',
+                            'data-l10n-id': "header-contacts",
                             class: 'breadcrumb',
-                        }, 'Контакти');
+                        }),
+                        engLink = util.createEl('li', {
+                            'data-l10n-id': "header-eng",
+                            class: 'breadcrumb',
+                        }),
+                        ukrLink = util.createEl('li', {
+                            'data-l10n-id': "header-ukr",
+                            class: 'breadcrumb',
+                        });
 
                     breadcrumbWrapper.on('click', $.proxy(function() {
                         $('.art-splashscreen').hide();
@@ -86,10 +94,16 @@ define([
                     }, this));
                     aboutLink.on('click', $.proxy(this.showAboutMe, this));
                     contactsLink.on('click', $.proxy(this.showContacts, this));
+                    engLink.on('click', function() {
+                        document.l10n.requestLanguages(['en-US']);
+                    });
+                    ukrLink.on('click', function() {
+                        document.l10n.requestLanguages(['ua']);
+                    });
 
                     header.append(logoWrapper.append(logo));
 
-                    breadcrumbWrapper.append([galleryLink, aboutLink, contactsLink]);
+                    breadcrumbWrapper.append([galleryLink, aboutLink, contactsLink, engLink, ukrLink]);
                     header.append(breadcrumbWrapper);
                 },
 
@@ -193,7 +207,12 @@ define([
                 },
 
                 updateFooter: function updateFooter() {
-                    $('footer').html(new Date().getFullYear() + '&nbsp;&copy;&nbsp;' + 'Андрій Чернець');
+                    $('footer').html(new Date().getFullYear());
+                    $('footer').append('&nbsp;&copy;&nbsp;');
+                    $('footer').append(util.createEl('span', {
+                        'data-l10n-id': 'splash-achernets'
+                    }));
+
                 }
             }
         })();
