@@ -4,7 +4,7 @@ define(["../scripts/config-prod"], function(Config) {
     var Data;
 
     (function(cfg) {
-        var setImageCategories = function setImageCategories(images) {
+        var findImageCategories = function findImageCategories(images) {
                 var res = [];
                 for (var i = 0; i < images.length; i++) {
                     var cat = images[i].category;
@@ -14,7 +14,7 @@ define(["../scripts/config-prod"], function(Config) {
                 }
                 return res;
             },
-            categories = setImageCategories(cfg.images),
+            categories = findImageCategories(cfg.images),
             instance;
 
         Data = function Data() {
@@ -28,6 +28,17 @@ define(["../scripts/config-prod"], function(Config) {
             };
             this.getImages = function getImages() {
                 return cfg.images;
+            };
+            this.filterImagesByCategoryName = function filterImagesByCategoryName(catName) {
+                var res = [],
+                    images = cfg.images;
+                for (var i = 0; i < images.length; i++) {
+                    var cat = images[i].category;
+                    if (cat === catName) {
+                        res.push(images[i]);
+                    }
+                }
+                return res;
             };
         }
     })(Config);

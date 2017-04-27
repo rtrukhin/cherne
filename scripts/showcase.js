@@ -17,10 +17,9 @@ define([
 
                 for (var i = 0; i < categories.length; i++) {
                     var cat = categories[i],
-                        images = $('.art-image-wrapper[data-category=' + cat + ']'),
+                        images = data.filterImagesByCategoryName(cat),
                         rndImg = images[Math.floor(Math.random() * images.length)],
-                        rndImgName = $(rndImg).find('img').attr('src').split('/')[1].split('.')[0],
-                        showcaseEl = this.createShowcaseEl(rndImgName, cat);
+                        showcaseEl = this.createShowcaseEl(rndImg);
 
                     showcaseEl.on('click', $.proxy(function(event) {
                         var cat = $(event.currentTarget).data('category');
@@ -32,17 +31,18 @@ define([
                     this.hide();
                 }
             },
-            createShowcaseEl: function createShowcaseEl(name, cat) {
+            createShowcaseEl: function createShowcaseEl(image) {
                 var wrapper = util.createEl('figure', {
                         class: 'showcase-img',
-                        'data-category': cat
+                        'data-category': image.category
                     }),
                     img = util.createEl('img', {
-                        src: 'images/' + name + '.jpg'
+                        src: 'images/' + image.name
                     }),
                     caption = util.createEl('figcaption', {
-                        class: 'showcase-caption'
-                    }, cat);
+                        class: 'showcase-caption',
+                        'data-l10n-id': image.categoryCode
+                    });
 
                 wrapper.append(img);
                 wrapper.append(caption);

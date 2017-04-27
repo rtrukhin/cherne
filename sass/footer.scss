@@ -1,18 +1,12 @@
-@import 'static';
 .art-footer {
-    @media (min-width: $media-desktop-min-width) {
-        height: $footer-height;
-        line-height: $footer-height;
-    }
-    @media (max-width: $media-phone-max-width) {
-        height: $footer-height-phone;
-        line-height: $footer-height-phone;
-    }
-    background-color: $footer-bkg-color;
-    color: $footer-txt-color;
+    background-color: darkred;
+    display: block;
+    color: black;
     text-align: center;
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    top: -1em;
+    line-height: 2em;
+    font-size: 0.7em;
 }

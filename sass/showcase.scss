@@ -1,0 +1,36 @@
+.art-showcase {
+    display: flex;
+    height: 92vh;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    .showcase-img {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        min-width: 5em;
+        max-width: 20em;
+        height: 40em;
+        overflow: hidden;
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+            .showcase-caption {
+                bottom: 0em;
+            }
+        }
+        .showcase-caption {
+            position: absolute;
+            padding: 0 5em;
+            background-color: white;
+            opacity: 0.6;
+            bottom: -2em;
+            color: black;
+            font-size: 2em;
+            transition: bottom 0.3s ease-in-out;
+        }
+    }
+}

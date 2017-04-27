@@ -1,351 +1,395 @@
 define({
     "images": [{
         "name": "zaklynacz_dosczu.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Малярство"
+        "caption": "img-zaklynacz_dosczu-capt",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Малярство",
+        "categoryCode": "img-cat-malyarstvo",
     }, {
         "name": "zahubleni_tini.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Малярство"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Малярство",
+        "categoryCode": "img-cat-malyarstvo"
     }, {
         "name": "wiz.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Малярство"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Малярство",
+        "categoryCode": "img-cat-malyarstvo"
     }, {
         "name": "voskresinnja.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Малярство"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Малярство",
+        "categoryCode": "img-cat-malyarstvo"
     }, {
         "name": "vesilla_v_kani_halylejskij.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Малярство"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Малярство",
+        "categoryCode": "img-cat-malyarstvo"
     }, {
         "name": "velykyj_rahivnyk.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
-    }, {
-        "name": "stub.png",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Абстракції",
+        "categoryCode": "img-cat-abstraction"
     }, {
         "name": "spas.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Абстракції",
+        "categoryCode": "img-cat-abstraction"
     }, {
         "name": "sonata.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Абстракції",
+        "categoryCode": "img-cat-abstraction"
     }, {
         "name": "sad_angelskyh_pisen.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Абстракції",
+        "categoryCode": "img-cat-abstraction"
     }, {
         "name": "rytual-600x652.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Абстракції",
+        "categoryCode": "img-cat-abstraction"
     }, {
         "name": "rytual.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Абстракції"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Абстракції",
+        "categoryCode": "img-cat-abstraction"
     }, {
         "name": "rydannja.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "ryba_po.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "ryba.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "rozpjattja.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "rozmova.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "roman.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "provody_stomlenoho_soncja.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Пейзаж"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Пейзаж",
+        "categoryCode": "img-cat-landscape"
     }, {
         "name": "pokynute_derevo.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "pereviznyk.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "pavel.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "pastuh.JPG",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "oczikuvannja_povnogo_misjacja.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "oboz.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "noj.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ілюстрація"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ілюстрація",
+        "categoryCode": "img-cat-illustration"
     }, {
         "name": "nikolae.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "Narcissus.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "mistok.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "mawky.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "masky.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "mamaj2.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "mamaj.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "logo.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "lihtarnyk.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "kulbabyni_dity.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "kovczeg.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "kosar.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "koropy.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "korabel-mrij.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "konstantinos.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "iosafat.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "IMG_1199.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "ikar.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "hwylja.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "garderobe.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "ewoljucija.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "dvoje.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "czornogora.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "bohorodyca04.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "bohorodyca03.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "bohorodyca02.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "bohorodyca01.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "bohorodyca.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "apostoly.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "andriy_pervozvannyy.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }, {
         "name": "1z12.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
-    }, {
-        "name": "0.jpg",
-        "caption": "Опис картини",
-        "size": "200x200",
-        "material": "Левкас",
-        "category": "Ікона"
+        "caption": "img-caption-test",
+        "size": "img-200x200",
+        "material": "img-material-levkas",
+        "category": "Ікона",
+        "categoryCode": "img-cat-icon"
     }]
 });

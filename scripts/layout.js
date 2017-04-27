@@ -45,7 +45,7 @@ define([
                         }),
                         closeBtn = util.createEl('div', {
                             class: 'close-btn'
-                        }, 'X');
+                        }, '&otimes;');
 
                     closeBtn.on('click', $.proxy(this.hideModalDialog, this));
                     dialogWrapper.append([closeBtn, content]);
@@ -84,13 +84,10 @@ define([
                             class: 'breadcrumb',
                         });
 
-                    breadcrumbWrapper.on('click', $.proxy(function() {
-                        $('.art-splashscreen').hide();
-                    }, this));
-
                     galleryLink.on('click', $.proxy(function() {
                         $(Layout).trigger(Layout.EVENTS.openShowcase);
                         this.hideAllImages();
+                        $('.art-splashscreen').hide();
                     }, this));
                     aboutLink.on('click', $.proxy(this.showAboutMe, this));
                     contactsLink.on('click', $.proxy(this.showContacts, this));
@@ -107,13 +104,15 @@ define([
                     header.append(breadcrumbWrapper);
                 },
 
-                createImageElements: function createImageElements() {
-                    var images = Data.getImages(),
+                createFullGallery: function createFullGallery() {
+                    var galleryEl = $('.art-gallery'),
+                        images = Data.getImages(),
                         img,
                         imgWrapper,
                         imgCaption,
-                        imgEl,
-                        res = [];
+                        imgMaterial,
+                        imgSize,
+                        imgEl;
                     for (var i = 0; i < images.length; i++) {
                         img = images[i];
                         imgWrapper = util.createEl('figure', {
@@ -121,31 +120,25 @@ define([
                             'data-category': img.category
                         });
                         imgCaption = util.createEl('figcaption', {
-                            class: 'art-image-caption'
-                        }, img.caption);
+                            class: 'art-image-caption',
+                            'data-l10n-id': img.caption,
+                        });
+                        imgMaterial = util.createEl('p', {
+                            class: 'art-image-material',
+                            'data-l10n-id': img.material,
+                        });
+                        imgSize = util.createEl('p', {
+                            class: 'art-image-size',
+                            'data-l10n-id': img.size,
+                        });
                         imgEl = util.createEl('img', {
                             class: 'art-image',
                             src: 'images/' + img.name
                         });
 
                         imgWrapper.on('click', $.proxy(this.onImageClickHandler, this));
-                        imgWrapper.append([imgEl, imgCaption]);
-
-                        res.push(imgWrapper);
+                        galleryEl.append(imgWrapper.append([imgEl, imgCaption, imgMaterial, imgSize]));
                     }
-
-                    return res;
-                },
-
-                createFullGallery: function createFullGallery() {
-                    var galleryEl = $('.art-gallery'),
-                        images = this.createImageElements();
-
-                    for (var i = 0; i < images.length; i++) {
-                        var img = images[i];
-                        galleryEl.append(img);
-                    }
-
                     this.hideAllImages();
                 },
 

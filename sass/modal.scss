@@ -1,31 +1,32 @@
 .art-modal-popup {
-  position: fixed;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: auto 100vh;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
-  top: -2000vh;
-
-  &.active {
-    display: block;
-    opacity: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    right: 0;
     bottom: 0;
-    transition: 0.5s ease-in-out;
-  }
-
-  .art-modal-text {
-    width: 100vw;
-    font-size: 10vw;
-    text-align: center;
-    line-height: 100vh;
-    display: inline-block;
-    background: url(../images/0.jpg) no-repeat  20px 20px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-  }
-
+    left: 0;
+    background-color: black;
+    opacity: 0.8;
+    .content {
+        color: white;
+        padding-top: 10em;
+        font-size: 1.5em;
+        h2 {
+            font-size: 2em;
+            margin: 1em 0;
+        }
+    }
+    .close-btn {
+        position: absolute;
+        color: grey;
+        font-size: 5em;
+        right: 0.5em;
+        top: 0.5em;
+        &:hover {
+            cursor: pointer;
+            color: white;
+        }
+    }
 }

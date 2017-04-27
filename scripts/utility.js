@@ -20,7 +20,7 @@ define(function() {
                 el.attr(key, attr[key]);
             }
 
-            el.text(text || '');
+            el.html(text || '');
             return el;
         }
     }

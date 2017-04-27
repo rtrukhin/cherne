@@ -1,108 +1,42 @@
-@import 'static';
 .art-gallery {
-    height: 90vh;
-    overflow-y: auto;
-    .hidden {
-        display: none;
-    }
-}
-
-.art-gallery-showcase {
     display: flex;
-    padding: 20px;
-    text-align: center;
-    flex-wrap: nowrap;
     justify-content: center;
-    h1 {
-        color: $category-caption-txt;
-        text-align: center;
-    }
-    .art-gallery-category {
+    flex-wrap: wrap;
+    color: white;
+    background-color: black;
+    .art-image-wrapper {
+        display: flex;
         position: relative;
-        @media (min-width: $media-desktop-min-width) {
-            max-width: 30vw;
-            max-height: 30vw;
-        }
-        @media (max-width: $media-phone-max-width) {
-            max-width: 15em;
-            max-height: 15em;
-        }
-        background-color: darkgrey;
+        align-items: center;
+        justify-content: center;
+        width: 30em;
+        height: 30em;
         overflow: hidden;
-        margin: 2vw;
-        cursor: pointer;
-        img {
-            width: 10vw;
-            // transition: all 2s;
+        margin: 1em;
+        transition: border-radius 0.3s ease-out;
+        .art-image {
+            width: 50em;
         }
-        figcaption {
-            color: white;
+        .art-image-caption,
+        .art-image-size,
+        .art-image-material {
+            font-size: 1.2em;
             position: absolute;
-            width: 100%;
-            font-size: 2vw;
-            opacity: 0.8;
-            bottom: 1vw;
-            &:hover {
-                opacity: 0.5;
-                text-shadow: 1px 1px 5px white;
-            }
+            left: 1em;
+            bottom: -5em;
+            transition: bottom 0.3s ease-out;
         }
-    }
-}
-
-.art-gallery-images {
-    display: flex;
-    .art-gallery-thumb {
-        width: 40vw;
-        height: 40vw;
-        background-color: #0D3349;
-        margin: 0;
-        position: relative;
-        overflow: hidden;
         &:hover {
             cursor: pointer;
-            opacity: 0.8;
-            .captionCnt {
-                bottom: 0;
+            border-radius: 3em;
+            .art-image-caption {
+                bottom: 3em;
             }
-        }
-        .captionCnt {
-            height: 7em;
-            background-color: black;
-            opacity: 0.5;
-            position: absolute;
-            bottom: -8em;
-            left: 0;
-            right: 0;
-            transition: 0.5s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            text-align: left;
-            padding: 1em;
-            span {
-                color: white;
-                font-family: Helvetica Neue, Helvetica, Arial, serif;
-                font-size: 1em;
-                &.caption {
-                    font-size: 2em;
-                    line-height: 2em;
-                }
-                &.tags {
-                    display: flex;
-                    .tag {
-                        display: block;
-                        height: 1em;
-                        min-width: 4em;
-                        border-radius: 0.2em;
-                        border: 1px solid #cccccc;
-                        background-color: #444444;
-                        margin-right: 1em;
-                        text-decoration: none;
-                        color: white;
-                        text-align: center;
-                    }
-                }
+            .art-image-size {
+                bottom: 2em;
+            }
+            .art-image-material {
+                bottom: 1em;
             }
         }
     }

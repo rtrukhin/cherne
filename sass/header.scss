@@ -1,47 +1,24 @@
-@import 'static';
 .art-header {
-    @media (min-width: $media-desktop-min-width) {
-        min-height: $header-height;
-        font-size: $header-text-size;
+    display: flex;
+    background-color: darkred;
+    #logo {
+        width: 5em;
     }
-    @media (max-width: $media-phone-max-width) {
-        min-height: $header-height-phone;
-        font-size: $header-text-size-phone;
-    }
-    background-color: $header-bkg-color;
-    figure.logo {
-        padding: 0;
-        margin: 0;
-        background: linear-gradient(90deg, black, #413f3f, #413f3f, black);
-        #art-logo {
-            @media (min-width: $media-desktop-min-width) {
-                max-height: $header-height;
-            }
-            @media (max-width: $media-phone-max-width) {
-                max-height: $header-height-phone;
-            }
-            margin-left: 48vw;
-            display: block;
-            cursor: pointer;
-        }
-    }
-    .nav {
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
         .breadcrumb {
-            display: inline-flex;
-            padding: 0.5vw 4vw;
-            color: $header-nav-txt-color;
-            text-decoration: inherit;
+            margin: 0 1em;
+            padding: 0 1em;
+            color: white;
+            font-size: 1.5em;
+            line-height: 2em;
+            transition: background-color 0.3s ease-out;
             &:hover {
-                background-color: $header-nav-bkg-hover-color;
-                color: $header-nav-txt-color-hover;
+                background-color: grey;
+                cursor: pointer;
             }
         }
     }
