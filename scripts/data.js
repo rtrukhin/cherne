@@ -1,6 +1,6 @@
 'use strict';
 
-define(["../scripts/config-prod"], function(Config) {
+define(["../scripts/config-prod.json"], function(Config) {
     var Data;
 
     (function(cfg) {

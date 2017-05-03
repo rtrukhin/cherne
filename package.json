@@ -9,6 +9,7 @@
     "express": "^4.14.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
+    "gulp-html-replace": "^1.6.2",
     "gulp-livereload": "^3.8.1",
     "gulp-open": "^2.0.0",
     "gulp-requirejs-optimize": "^1.0.0",
@@ -17,7 +18,9 @@
     "gulp-uglify": "^1.5.3",
     "l20n": "^4.0.0-beta.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-requirejs-optimize": "^1.2.0"
+  },
   "scripts": {
     "test": "test"
   },

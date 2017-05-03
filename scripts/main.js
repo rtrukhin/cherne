@@ -4,6 +4,12 @@
  * Created by rtrukh on 26.05.2016.
  */
 
+require.config({
+    paths: {
+        // foo: 'libs/foo-1.1.3'
+    }
+});
+
 requirejs([
     "../bower_components/jQuery/dist/jquery",
     "../scripts/utility",
