@@ -11,18 +11,10 @@ function startExpress(path) {
 }
 
 gulp.task('serve', ['styles'], function() {
-    var livereload = require('gulp-livereload'),
-        open = require('gulp-open'),
+    var open = require('gulp-open'),
         options = {
             uri: 'http://chernets-art.info:9095'
         };
-
-    livereload.listen({
-        start: true,
-        port: 35728
-    });
-    gulp.watch('./sass/**/*.scss', ['styles']);
-    gulp.watch(['./styles/main.css', './scripts/*.js']).on('change', livereload.changed);
 
     startExpress();
 

@@ -106,7 +106,8 @@ define([
 
                 createFullGallery: function createFullGallery() {
                     var galleryEl = $('.art-gallery'),
-                        images = Data.getImages(),
+                        data = Data.getInstance,
+                        images = data.categories,
                         img,
                         imgWrapper,
                         imgCaption,
