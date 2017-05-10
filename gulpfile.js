@@ -23,7 +23,7 @@ gulp.task('serve', ['styles'], function() {
 
 });
 
-gulp.task('serve-dist', ['clean', 'locales-dist', 'styles-dist', 'images-dist', 'html-dist', 'scripts-dist', ], function() {
+gulp.task('serve-dist', ['clean', 'config-dist', 'locales-dist', 'styles-dist', 'images-dist', 'html-dist', 'scripts-dist', ], function() {
     var open = require('gulp-open'),
         htmlreplace = require('gulp-html-replace'),
         options = {
@@ -85,6 +85,11 @@ gulp.task('html-dist', function() {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('config-dist', function() {
+    return gulp.src(['./*.json'])
+        .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('locales-dist', function() {
     return gulp.src(['./locales/*.ftl'])
         .pipe(gulp.dest('./dist/locales'));
@@ -106,6 +111,6 @@ gulp.task('scripts-dist', ['script-dist-copy'], function() {
 });
 
 gulp.task('script-dist-copy', function() {
-    return gulp.src(['./node_modules/l20n/dist/compat/web/l20n.js', './bower_components/requirejs/require.js'])
+    return gulp.src(['./node_modules/l20n/dist/compat/web/l20n.js', './node_modules/requirejs/require.js'])
         .pipe(gulp.dest('./dist/js/'));
 });

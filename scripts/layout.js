@@ -1,17 +1,16 @@
 'use strict';
 
 define([
-    "../scripts/utility",
-    "../scripts/data"
-], function(util, Data) {
+    "../scripts/utility"
+], function(util) {
     var Layout = function Layout() {
         return (function() {
             return {
-                create: function create() {
+                create: function create(data) {
                     this.createMainStructure();
                     this.createHeader();
                     this.updateFooter();
-                    this.createFullGallery();
+                    this.createFullGallery(data);
                     this.createModalDialog();
                 },
                 createMainStructure: function createMainStructure() {
@@ -104,16 +103,15 @@ define([
                     header.append(breadcrumbWrapper);
                 },
 
-                createFullGallery: function createFullGallery() {
+                createFullGallery: function createFullGallery(images) {
                     var galleryEl = $('.art-gallery'),
-                        data = Data.getInstance,
-                        images = data.categories,
                         img,
                         imgWrapper,
                         imgCaption,
                         imgMaterial,
                         imgSize,
                         imgEl;
+
                     for (var i = 0; i < images.length; i++) {
                         img = images[i];
                         imgWrapper = util.createEl('figure', {

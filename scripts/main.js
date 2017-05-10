@@ -9,7 +9,7 @@ requirejs([
     "../scripts/utility",
     "../scripts/showcase",
     "../scripts/layout"
-], function(jquery, Util, Showcase, Layout) {
+], function(jquery, Util, Showcase, Layout, Data) {
     var cherneArt = {
         init: function init() {
             if (!Util.browseHappy()) {
@@ -20,8 +20,10 @@ requirejs([
             var layout = new Layout(),
                 showcase = new Showcase();
 
-            layout.create();
-            showcase.create();
+            $.getJSON('../config-prod.json', function(data) {
+                layout.create(data.images);
+                showcase.create(data.images);
+            });
 
             $(Showcase).on(Showcase.EVENTS.showCategory, function() {
                 var category = arguments[1];

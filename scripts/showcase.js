@@ -1,24 +1,25 @@
 'use strict';
 
 define([
-    "../scripts/utility",
-    "../scripts/data"
-], function(util, data) {
+    "../scripts/utility"
+], function(util) {
 
     var Showcase = function Showcase() {
         return {
-            create: function create() {
-                var imagesByCategory = [],
-                    categories = data.getImageCategories();
+            categories: [],
+            create: function create(images) {
+                this.categories = this.getImageCategories(images);
 
                 $('.art-gallery').after(util.createEl('article', {
                     class: 'art-showcase'
                 }));
 
-                for (var i = 0; i < categories.length; i++) {
-                    var cat = categories[i],
-                        images = data.filterImagesByCategoryName(cat),
-                        rndImg = images[Math.floor(Math.random() * images.length)],
+                for (var i = 0; i < this.categories.length; i++) {
+                    var cat = this.categories[i],
+                        imagesByCategory = images.filter(function(el, i, arr) {
+                            return el.category.indexOf(cat) > -1;
+                        }, cat),
+                        rndImg = imagesByCategory[Math.floor(Math.random() * imagesByCategory.length)],
                         showcaseEl = this.createShowcaseEl(rndImg);
 
                     showcaseEl.on('click', $.proxy(function(event) {
@@ -31,6 +32,19 @@ define([
                     this.hide();
                 }
             },
+
+            getImageCategories: function getImageCategories(images) {
+                var categories = [];
+
+                images.forEach(function(img) {
+                    if (categories.indexOf(img.category) === -1) {
+                        categories.push(img.category);
+                    }
+                }, this);
+
+                return categories;
+            },
+
             createShowcaseEl: function createShowcaseEl(image) {
                 var wrapper = util.createEl('figure', {
                         class: 'showcase-img',
